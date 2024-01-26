@@ -1,0 +1,21 @@
+public enum ItemType
+{
+    Poster,
+    Poster2,
+    Manicure,
+    BishoujoFigures,
+    Mannequin,
+    wigs,
+    wigs2,
+    BedCleaning,
+    Shoes,
+    SchoolUniform,
+    PlantsDrop,
+    Water,
+    dirt,
+    Laundry,
+    MaggiCups,
+    Snacks,
+    Socks,
+    MakeUp,
+}

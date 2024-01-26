@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HoldingItem : MonoBehaviour
 {
+    public ItemType ItemType;
     public HealthBar healthBar;
     public bool isCurrentlyInteracting = false;
     public Sprite sprite;
@@ -22,6 +23,7 @@ public class HoldingItem : MonoBehaviour
         }
         else if (isCurrentlyInteracting && healthBar.IsFull())
         {
+            CalculationSystem.UpdateItemStatus(ItemType, true);
             Destroy(gameObject);
         }
     }
@@ -40,6 +42,7 @@ public class HoldingItem : MonoBehaviour
 
     public void ChangeSprite()
     {
+        CalculationSystem.UpdateItemStatus(ItemType, true);
         spriteRenderer.sprite = sprite;
     }
 }
