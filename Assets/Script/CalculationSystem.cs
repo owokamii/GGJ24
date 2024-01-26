@@ -107,7 +107,7 @@ public class CalculationSystem : MonoBehaviour
             && dirt && Laundry && MaggiCups && Snacks && Socks)
         {
             //ending 1
-            GameManager.ending++;
+            //GameManager.ending++;
         }
         else if (Poster && Poster2 && BishoujoFigures && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform)
         {
