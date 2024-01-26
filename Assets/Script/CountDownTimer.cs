@@ -6,7 +6,6 @@ public class CountDownTimer : MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
     public float timeRemaining = 60;
-    public bool isTimeLimit = false;
 
     private void Update()
     {
@@ -33,7 +32,6 @@ public class CountDownTimer : MonoBehaviour
         if (timeRemaining == 0)
         {
             Time.timeScale = 0;
-            isTimeLimit = true;
         }
     }
 }
