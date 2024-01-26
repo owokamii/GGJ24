@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,8 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private HoldingItem currentInteractingItem = null;
 
-    private bool isInteractingWithHoldingLayer = false;
-
     private void Update()
     {
         if (Input.GetKey(KeyCode.E))
@@ -23,43 +20,55 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            isInteractingWithHoldingLayer = false;
+            if (currentInteractingItem != null)
+            {
+                currentInteractingItem.StopInteraction();
+                currentInteractingItem = null;
+            }
             healthBar.Click = false;
-            //Debug.Log("U no holding E");
         }
     }
 
     private void CheckForItems()
     {
-        if (isInteractingWithHoldingLayer) return;
-        
+        Collider2D closestHit = null;
+        float closestDistance = float.MaxValue;
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRange, interactableLayer | HoldingLayer);
 
         foreach (var hit in hits)
         {
-            //Debug.Log("Hit: " + hit.gameObject.name + ", Layer: " + hit.gameObject.layer);
-            if (((1 << hit.gameObject.layer) & interactableLayer) != 0)
+            float distance = (hit.transform.position - transform.position).sqrMagnitude;
+            if (distance < closestDistance)
             {
-                InteractWithHealthItem(hit.GetComponent<Item>());
-                break;
+                closestHit = hit;
+                closestDistance = distance;
             }
-            else if (((1 << hit.gameObject.layer) & HoldingLayer) != 0)
-            {
+        }
 
-                if (((1 << hit.gameObject.layer) & HoldingLayer) != 0)
+        if (closestHit != null)
+        {
+            ProcessInteraction(closestHit);
+        }
+    }
+
+    private void ProcessInteraction(Collider2D hit)
+    {
+        if (((1 << hit.gameObject.layer) & interactableLayer) != 0)
+        {
+            InteractWithHealthItem(hit.GetComponent<Item>());
+        }
+        else if (((1 << hit.gameObject.layer) & HoldingLayer) != 0)
+        {
+            var item = hit.GetComponent<HoldingItem>();
+            if (item != null && currentInteractingItem != item)
+            {
+                if (currentInteractingItem != null)
                 {
-                    var item = hit.GetComponent<HoldingItem>();
-                    if (item != null)
-                    {
-                        if (currentInteractingItem != null)
-                        {
-                            currentInteractingItem.StopInteraction();
-                        }
-                        currentInteractingItem = item;
-                        currentInteractingItem.StartInteraction();
-                        break;
-                    }
+                    currentInteractingItem.StopInteraction();
                 }
+                currentInteractingItem = item;
+                currentInteractingItem.StartInteraction();
             }
         }
     }
@@ -78,3 +87,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 }
+
