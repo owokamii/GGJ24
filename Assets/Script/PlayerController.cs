@@ -72,17 +72,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void InteractWithHoldingLayer(HoldingItem item)
-    //{
-    //    //Debug.Log("U was holding E");
-    //    if (!isInteractingWithHoldingLayer)
-    //    {
-    //        isInteractingWithHoldingLayer = true;
-    //        healthBar.Click = true;
-    //        Debug.Log("You need to hold E");
-    //    }
-    //}
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

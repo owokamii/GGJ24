@@ -28,8 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessInputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal") * movementSpeed;
+        float moveX = Input.GetAxisRaw("Horizontal") * movementSpeed  ;
         float moveY = Input.GetAxisRaw("Vertical") * movementSpeed;
+
+        if (Mathf.Abs(moveX) > 0 && Mathf.Abs(moveY) > 0)
+        {
+            moveY /= 2.0f;
+        }
 
         body.velocity = new Vector2(moveX, moveY);
     }
