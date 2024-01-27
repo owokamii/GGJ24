@@ -25,6 +25,7 @@ public class CalculationSystem : MonoBehaviour
     public static bool Socks = false;
     public static bool MakeUp = false;
     public static bool DirtyDish = false;
+    public static bool Fridge = false;
 
     CountDownTimer timer = new CountDownTimer();
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
@@ -93,6 +94,9 @@ public class CalculationSystem : MonoBehaviour
             case ItemType.DirtyDish:
                 DirtyDish = status;
                 break;
+            case ItemType.Fridge:
+                Fridge = status;
+                break;
         }
     }
     // Start is called before the first frame update
@@ -113,7 +117,7 @@ public class CalculationSystem : MonoBehaviour
     public void Ending()
     {
         if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
         {
             //ending 1
             //GameManager.ending++;
@@ -124,13 +128,13 @@ public class CalculationSystem : MonoBehaviour
             //ending2
             GameManager.instance.UnlockEnding("Ending2");
         }
-        else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
+        else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
         {
             //ending5
             GameManager.instance.UnlockEnding("Ending5");
         }
         else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
         {
             //ending6
             GameManager.instance.UnlockEnding("Ending6");
@@ -138,7 +142,7 @@ public class CalculationSystem : MonoBehaviour
         else if(SelectionQuestion.YesOrNo == true)
         {
             if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
             {
                 //ending 4
                 GameManager.instance.UnlockEnding("Ending4");

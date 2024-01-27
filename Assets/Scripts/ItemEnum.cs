@@ -20,4 +20,5 @@ public enum ItemType
     Socks,
     MakeUp,
     DirtyDish,
+    Fridge,
 }
