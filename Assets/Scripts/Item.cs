@@ -4,9 +4,12 @@ public class Item : MonoBehaviour
 {
     public ItemType itemType;
 
-    public Sprite sprite;
-    private SpriteRenderer spriteRenderer;
+    public Sprite spriteHighlight; // dirty highlight
+    public Sprite sprite; //clean
+    private SpriteRenderer spriteRenderer; // dirty => clean
+    private bool isInteracted = false;
 
+    [Header("Maid Outfit")]
     public SpriteRenderer spritePlayer;
     public Sprite PlayerNewSprite;
 
@@ -19,10 +22,9 @@ public class Item : MonoBehaviour
     {
         if (sprite != null)
         {
-            Debug.Log("First");
             CalculateEnding.UpdateItemStatus(itemType, true);
             spriteRenderer.sprite = sprite;
-            //Destroy(gameObject);
+            isInteracted = true;
         }
         else
         {
@@ -31,5 +33,15 @@ public class Item : MonoBehaviour
         }
     }
 
-
+    public void ItemHighlight()
+    {
+        if(!isInteracted)
+        {
+            spriteRenderer.sprite = spriteHighlight;
+        }
+        else
+        {
+            spriteHighlight = null;
+        }
+    }
 }

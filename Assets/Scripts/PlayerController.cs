@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -22,6 +23,27 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRange, interactableLayer | HoldingLayer | WearingMask);
+        foreach (Collider2D hit in hits)
+        {
+            //Debug.Log(hit.gameObject.name + " at distance: ");
+
+            if ((hit.gameObject.layer & interactableLayer) != 0)
+            {
+                Debug.Log("hello");
+                Item itemScript = hit.GetComponent<Item>();
+                if (itemScript != null)
+                {
+                    Debug.Log("hello");
+                    itemScript.ItemHighlight();
+                }
+            }
+            else if ((hit.gameObject.layer & HoldingLayer) != 0)
+            {
+
+            }
+        }
+
         if (!Epress && Input.GetKeyDown(KeyCode.E))
         {
             Epress = true;
