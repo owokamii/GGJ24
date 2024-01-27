@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private HoldingItem currentInteractingItem = null;
 
     public CanvasGroup healthBarCanvasGroup;
+    private HashSet<GameObject> highlightedItems = new HashSet<GameObject>();
 
     private void Awake()
     {
@@ -23,24 +25,41 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        HashSet<GameObject> hitsThisFrame = new HashSet<GameObject>();
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRange, interactableLayer | HoldingLayer | WearingMask);
         foreach (Collider2D hit in hits)
         {
-            //Debug.Log(hit.gameObject.name + " at distance: ");
+            GameObject hitObject = hit.gameObject;
+            hitsThisFrame.Add(hitObject);
 
-            if ((1<< hit.gameObject.layer & interactableLayer) != 0)
+            if ((1 << hitObject.layer & interactableLayer) != 0)
             {
-                Debug.Log("hello");
                 Item itemScript = hit.GetComponent<Item>();
-                if (itemScript != null)
+                if (itemScript != null && !highlightedItems.Contains(hitObject))
                 {
                     itemScript.ItemHighlight();
+                    highlightedItems.Add(hitObject);
                 }
             }
-            else if ((hit.gameObject.layer & HoldingLayer) != 0)
+        }
+        HashSet<GameObject> itemsToRemove = new HashSet<GameObject>();
+        foreach (var highlightedItem in highlightedItems)
+        {
+            if (!hitsThisFrame.Contains(highlightedItem))
             {
-
+                Item itemScript = highlightedItem.GetComponent<Item>();
+                if (itemScript != null)
+                {
+                    itemScript.UnHighlight();
+                }
+                itemsToRemove.Add(highlightedItem);
             }
+        }
+
+        foreach (var itemToRemove in itemsToRemove)
+        {
+            highlightedItems.Remove(itemToRemove);
         }
 
         if (!Epress && Input.GetKeyDown(KeyCode.E))

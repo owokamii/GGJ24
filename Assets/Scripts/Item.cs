@@ -5,6 +5,7 @@ public class Item : MonoBehaviour
     public ItemType itemType;
 
     public Sprite spriteHighlight; // dirty highlight
+    public Sprite originalSprite; // originalSprite
     public Sprite sprite; //clean
     private SpriteRenderer spriteRenderer; // dirty => clean
     private bool isInteracted = false;
@@ -42,6 +43,18 @@ public class Item : MonoBehaviour
         else
         {
             spriteHighlight = null;
+        }
+    }
+
+    public void UnHighlight()
+    {
+        if (!isInteracted)
+        {
+            spriteRenderer.sprite = originalSprite;
+        }
+        else
+        {
+            originalSprite = null;
         }
     }
 }
