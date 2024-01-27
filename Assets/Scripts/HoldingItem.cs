@@ -8,7 +8,7 @@ public class HoldingItem : MonoBehaviour
     public Sprite[] sprite;
     
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    public Animator animator;
 
     public CanvasGroup healthBarCanvasGroup;
     private bool HealbarWasFull;
@@ -24,7 +24,7 @@ public class HoldingItem : MonoBehaviour
         }
         HealbarWasFull = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,10 +32,14 @@ public class HoldingItem : MonoBehaviour
         if (isCurrentlyInteracting && healthBar.IsFull() & sprite != null && !HealbarWasFull)
         {
             ChangeSprite();
-            animator.SetBool("Interacting", true);
+            if (animator != null)
+            {
+                animator.SetBool("Interacting", true);
+                animator.enabled = false;
+            }
+            
             healthBarCanvasGroup.alpha = 0;
             HealbarWasFull = true;
-            animator.enabled = false;
             CalculateEnding.UpdateItemStatus(ItemType, true);
 
         }
@@ -48,13 +52,19 @@ public class HoldingItem : MonoBehaviour
         else if (isCurrentlyInteracting && !HealbarWasFull && !Input.GetKey(KeyCode.E))
         {
             Debug.Log("u left your hand");
-            animator.SetBool("Interacting", false);
+            if (animator != null)
+            {
+                animator.SetBool("Interacting", false);
+            }
         }
     }
 
     public void StartInteraction()
     {
-        animator.SetBool("Interacting", true);
+        if (animator != null)
+        {
+            animator.SetBool("Interacting", true);
+        }
         isCurrentlyInteracting = true;
         healthBar.Click = true;
     }

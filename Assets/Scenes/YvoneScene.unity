@@ -905,6 +905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1991345285}
     m_Modifications:
+    - target: {fileID: 1223034895769512839, guid: 047b9e99b85db4d4ba97a595120becb5, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 570459988}
     - target: {fileID: 1821878837021378555, guid: 047b9e99b85db4d4ba97a595120becb5, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 8
@@ -1547,6 +1551,10 @@ PrefabInstance:
       propertyPath: ItemType
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 8589379789617793392, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2048676602}
     - target: {fileID: 8589379789617793392, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
       propertyPath: healthBar
       value: 
@@ -4198,6 +4206,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2048676602 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -1140283731415796341, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
+  m_PrefabInstance: {fileID: 603448363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056167966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4483,6 +4496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
+    - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
+      propertyPath: healthBarCanvasGroup
+      value: 
+      objectReference: {fileID: 191955149}
     - target: {fileID: 4394867197348540840, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 7
