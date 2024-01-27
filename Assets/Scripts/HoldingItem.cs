@@ -12,7 +12,6 @@ public class HoldingItem : MonoBehaviour
 
     public CanvasGroup healthBarCanvasGroup;
     private bool HealbarWasFull;
-    public HealthBar healthbar;
 
     private void Start()
     {
@@ -35,6 +34,7 @@ public class HoldingItem : MonoBehaviour
             animator.SetBool("Interacting", true);
             healthBarCanvasGroup.alpha = 0;
             HealbarWasFull = true;
+            animator.enabled = false;
 
         }
         else if (isCurrentlyInteracting && healthBar.IsFull() && sprite == null)
@@ -43,8 +43,9 @@ public class HoldingItem : MonoBehaviour
             CalculateEnding.UpdateItemStatus(ItemType, true);
             Destroy(gameObject);
         }
-        else if (isCurrentlyInteracting && !HealbarWasFull && healthBar.Click == false)
+        else if (isCurrentlyInteracting && !HealbarWasFull && !Input.GetKey(KeyCode.E))
         {
+            Debug.Log("u left your hand");
             animator.SetBool("Interacting", false);
         }
     }
