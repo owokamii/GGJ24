@@ -6,13 +6,13 @@ public class Item3 : MonoBehaviour
 
     private SpriteRenderer spritePlayer;
     public Sprite PlayerNewSprite;
-    private SpriteRenderer spriteOri;
+    public SpriteRenderer spriteOri;
     public Sprite original;
     // Start is called before the first frame update
     void Start()
     {
         question = FindObjectOfType<SelectionQuestion>();
-        spriteOri = FindObjectOfType<SpriteRenderer>();
+        //spriteOri = FindObjectOfType<SpriteRenderer>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
@@ -31,8 +31,8 @@ public class Item3 : MonoBehaviour
         if (selection)
         {
             Debug.Log("Yes");
-            spritePlayer.sprite = PlayerNewSprite;
             spriteOri.sprite = original;
+            spritePlayer.sprite = PlayerNewSprite;
         }
         else
         {
