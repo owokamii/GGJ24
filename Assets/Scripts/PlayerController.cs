@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
                 currentInteractingItem = null;
             }
             healthBar.Click = false;
+            healthBarCanvasGroup.alpha = 0;
         }
     }
 
