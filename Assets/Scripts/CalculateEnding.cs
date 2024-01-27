@@ -1,5 +1,6 @@
 using UnityEngine;
 using static UnityEngine.CullingGroup;
+using static UnityEngine.Rendering.DebugUI;
 
 public class CalculateEnding: MonoBehaviour
 {
@@ -7,13 +8,10 @@ public class CalculateEnding: MonoBehaviour
     public static bool Poster2 = false;
     public static bool Manicure = false;
     public static bool BishoujoFigures = false;
-    public static bool BishoujoFigures2 = false;
-    public static bool Mannequin = false;
     public static bool wigs = false;
     public static bool wigs2 = false;
     public static bool BedCleaning = false;
     public static bool Shoes = false;
-    public static bool SchoolUniform = false;
     public static bool PlantsDrop = false;
     public static bool Water = false;
     public static bool dirt = false;
@@ -24,6 +22,7 @@ public class CalculateEnding: MonoBehaviour
     public static bool MakeUp = false;
     public static bool DirtyDish = false;
     public static bool Fridge = false;
+    public static bool StudyTable = false;
 
     CountDownTimer timer = new CountDownTimer();
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
@@ -45,12 +44,6 @@ public class CalculateEnding: MonoBehaviour
             case ItemType.BishoujoFigures:
                 BishoujoFigures = status;
                 break;
-            case ItemType.BishoujoFigures2:
-                BishoujoFigures = status;
-                break;
-            case ItemType.Mannequin:
-                Mannequin = status;
-                break;
             case ItemType.wigs:
                 wigs = status;
                 break;
@@ -62,9 +55,6 @@ public class CalculateEnding: MonoBehaviour
                 break;
             case ItemType.Shoes:
                 Shoes = status;
-                break;
-            case ItemType.SchoolUniform:
-                SchoolUniform = status;
                 break;
             case ItemType.PlantsDrop:
                 PlantsDrop = status;
@@ -96,6 +86,9 @@ public class CalculateEnding: MonoBehaviour
             case ItemType.Fridge:
                 Fridge = status;
                 break;
+            case ItemType.StudyTable:
+                StudyTable = status;
+                break;
         }
     }
     // Start is called before the first frame update
@@ -115,14 +108,14 @@ public class CalculateEnding: MonoBehaviour
 
     public void Ending()
     {
-        if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
+        if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
         {
             //ending 1
             //GameManager.ending++;
             GameManager.instance.UnlockEnding("Ending1");
         }
-        else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform)
+        else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && StudyTable)
         {
             //ending2
             GameManager.instance.UnlockEnding("Ending2");
@@ -132,16 +125,16 @@ public class CalculateEnding: MonoBehaviour
             //ending5
             GameManager.instance.UnlockEnding("Ending5");
         }
-        else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
+        else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
         {
             //ending6
             GameManager.instance.UnlockEnding("Ending6");
         }
         else if(SelectionQuestion.YesOrNo == true)
         {
-            if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
+            if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
             {
                 //ending 4
                 GameManager.instance.UnlockEnding("Ending4");
@@ -150,7 +143,7 @@ public class CalculateEnding: MonoBehaviour
         else
         {
             //ending3
-            GameManager.instance.UnlockEnding("Ending5");
+            GameManager.instance.UnlockEnding("Ending3");
         }
     }
 }
