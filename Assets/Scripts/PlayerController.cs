@@ -28,13 +28,12 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log(hit.gameObject.name + " at distance: ");
 
-            if ((hit.gameObject.layer & interactableLayer) != 0)
+            if ((1<< hit.gameObject.layer & interactableLayer) != 0)
             {
                 Debug.Log("hello");
                 Item itemScript = hit.GetComponent<Item>();
                 if (itemScript != null)
                 {
-                    Debug.Log("hello");
                     itemScript.ItemHighlight();
                 }
             }
