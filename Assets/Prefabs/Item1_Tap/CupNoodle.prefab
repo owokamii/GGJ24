@@ -13,8 +13,16 @@ PrefabInstance:
       value: CupNoodle
       objectReference: {fileID: 0}
     - target: {fileID: 2391594085987372019, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391594085987372019, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
       propertyPath: itemType
-      value: 15
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391594085987372019, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
+      propertyPath: spritePlayer
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2391594085987372019, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
       propertyPath: originalSprite
