@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item3 : MonoBehaviour
@@ -37,14 +35,14 @@ public class Item3 : MonoBehaviour
             Debug.Log("Yes");
             spritePlayer.sprite = PlayerNewSprite;
             Destroy(gameObject);
-            CalculationSystem.UpdateItemStatus(itemType, true);
+            CalculateEnding.UpdateItemStatus(itemType, true);
             //Debug.Log("Yes");
         }
         else
         {
             Debug.Log("No");
             Destroy(gameObject);
-            CalculationSystem.UpdateItemStatus(itemType, true);
+            CalculateEnding.UpdateItemStatus(itemType, true);
             //Debug.Log("No");
         }
     }

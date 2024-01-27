@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HoldingItem : MonoBehaviour
@@ -31,7 +29,7 @@ public class HoldingItem : MonoBehaviour
         else if (isCurrentlyInteracting && healthBar.IsFull())
         {
             healthBarCanvasGroup.alpha = 0;
-            CalculationSystem.UpdateItemStatus(ItemType, true);
+            CalculateEnding.UpdateItemStatus(ItemType, true);
             Destroy(gameObject);
         }
     }
@@ -50,7 +48,7 @@ public class HoldingItem : MonoBehaviour
 
     public void ChangeSprite()
     {
-        CalculationSystem.UpdateItemStatus(ItemType, true);
+        CalculateEnding.UpdateItemStatus(ItemType, true);
         spriteRenderer.sprite = sprite;
     }
 }

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
-public class CalculationSystem : MonoBehaviour
+public class CalculateEnding: MonoBehaviour
 {
     public static bool Poster = false;
     public static bool Poster2 = false;

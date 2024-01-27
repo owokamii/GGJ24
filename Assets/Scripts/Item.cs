@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -22,13 +20,13 @@ public class Item : MonoBehaviour
         if (sprite != null)
         {
             Debug.Log("First");
-            CalculationSystem.UpdateItemStatus(itemType, true);
+            CalculateEnding.UpdateItemStatus(itemType, true);
             spriteRenderer.sprite = sprite;
             //Destroy(gameObject);
         }
         else
         {
-            CalculationSystem.UpdateItemStatus(itemType, true);
+            CalculateEnding.UpdateItemStatus(itemType, true);
             Destroy(gameObject);
         }
     }
