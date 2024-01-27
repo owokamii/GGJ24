@@ -3,9 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
+    [SerializeField] private Animator animator;
 
     private Rigidbody2D body;
     private Vector2 direction;
+    private float moveX;
+    private float moveY;
 
     private void Awake()
     {
@@ -15,21 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ProcessInputs();
-    }
-
-    private void Movement1()
-    {
-        // get direction of input
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-
-        // set walk based on direction
-        body.velocity = direction * movementSpeed;
+        ProcessAnimation();
     }
 
     private void ProcessInputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal") * movementSpeed  ;
-        float moveY = Input.GetAxisRaw("Vertical") * movementSpeed;
+        moveX = Input.GetAxisRaw("Horizontal") * movementSpeed  ;
+        moveY = Input.GetAxisRaw("Vertical") * movementSpeed;
 
         if (Mathf.Abs(moveX) > 0 && Mathf.Abs(moveY) > 0)
         {
@@ -37,5 +32,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         body.velocity = new Vector2(moveX, moveY);
+    }
+
+    private void ProcessAnimation()
+    {
+        if(moveX != 0)
+        {
+            animator.SetFloat("moveX", movementSpeed);
+        }
+
+        if(moveY != 0)
+        {
+            animator.SetFloat("moveY", movementSpeed);
+        }
     }
 }
