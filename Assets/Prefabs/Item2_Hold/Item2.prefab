@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6209537, y: 0.6209537, z: 0.6209537}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1827804803
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +102,9 @@ MonoBehaviour:
   ItemType: 0
   healthBar: {fileID: 5171400513398297730, guid: eebb81c15a067a54282df0073f1375e8, type: 3}
   isCurrentlyInteracting: 0
-  sprite: {fileID: 0}
+  sprite:
+  - {fileID: 0}
+  healthBarCanvasGroup: {fileID: 0}
 --- !u!50 &-4217003446141264383
 Rigidbody2D:
   serializedVersion: 4

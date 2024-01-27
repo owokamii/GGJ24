@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2263235493706996792, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 153.84134
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2263235493706996792, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 196.3409
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2263235493706996792, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7397915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2263235493706996792, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411666534183911659, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72dca119e01b38047b7fe82df04accde, type: 3}
     - target: {fileID: 4705196878848475770, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
       propertyPath: m_Name
       value: Poster2
@@ -56,6 +60,14 @@ PrefabInstance:
       propertyPath: itemType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8179476045882136210, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
+      propertyPath: originalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72dca119e01b38047b7fe82df04accde, type: 3}
+    - target: {fileID: 8179476045882136210, guid: 4add7c7b70cb68c40aea8a703ceac464, type: 3}
+      propertyPath: spriteHighlight
+      value: 
+      objectReference: {fileID: 21300000, guid: 8aaf0a4705324fd4db4e5c5dfa082bc5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

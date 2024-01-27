@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2872719224466992879, guid: c933fb7ae2e4d8d448c23b520149c46c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872719224466992879, guid: c933fb7ae2e4d8d448c23b520149c46c, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5180881905179618430, guid: c933fb7ae2e4d8d448c23b520149c46c, type: 3}
       propertyPath: m_Name
       value: SchoolUniform
