@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5180881905179618430, guid: c933fb7ae2e4d8d448c23b520149c46c, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: SchoolUniform
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586483388157769878, guid: c933fb7ae2e4d8d448c23b520149c46c, type: 3}
+      propertyPath: itemType
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

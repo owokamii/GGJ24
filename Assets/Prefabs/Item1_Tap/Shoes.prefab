@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205495236409447253, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
+      propertyPath: itemType
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 205495236409447253, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
+      propertyPath: PlayerNewSprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3608915288318085053, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: Shoes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921867491874538796, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921867491874538796, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7796265610086799871, guid: 5c0c2cf87701d484398e3fbc206c5c8e, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 304593170627463181, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+      propertyPath: itemType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 304593170627463181, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+      propertyPath: PlayerNewSprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3816027034586963173, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: Wig1
       objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalPosition.x

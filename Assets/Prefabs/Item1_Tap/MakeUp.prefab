@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124515058215993220, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
+      propertyPath: itemType
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 124515058215993220, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
+      propertyPath: PlayerNewSprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3563820962077207404, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: MakeUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858899470384851453, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858899470384851453, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8021380810480268590, guid: 58b28a3402c978a439db6a3cd01d98ec, type: 3}
       propertyPath: m_LocalPosition.x

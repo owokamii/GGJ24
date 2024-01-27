@@ -77,7 +77,6 @@ public class PlayerController : MonoBehaviour
         {
             if (selectionPanel != null)
             {
-                //InteractWithHealthItem(hit.GetComponent<Item>());
                 selectionPanel.SetActive(true);
                 Time.timeScale = 0f;
             }

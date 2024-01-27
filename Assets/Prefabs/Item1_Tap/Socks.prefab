@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 484943944598913640, guid: 6e3042cbb1a03d449b012b917025560a, type: 3}
       propertyPath: m_Name
-      value: Item1 Variant
+      value: Socks
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924249854852650624, guid: 6e3042cbb1a03d449b012b917025560a, type: 3}
+      propertyPath: itemType
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6385623663407258666, guid: 6e3042cbb1a03d449b012b917025560a, type: 3}
       propertyPath: m_LocalPosition.x

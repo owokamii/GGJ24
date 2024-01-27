@@ -9,6 +9,7 @@ public class CalculationSystem : MonoBehaviour
     public static bool Poster2 = false;
     public static bool Manicure = false;
     public static bool BishoujoFigures = false;
+    public static bool BishoujoFigures2 = false;
     public static bool Mannequin = false;
     public static bool wigs = false;
     public static bool wigs2 = false;
@@ -23,6 +24,7 @@ public class CalculationSystem : MonoBehaviour
     public static bool Snacks = false;
     public static bool Socks = false;
     public static bool MakeUp = false;
+    public static bool DirtyDish = false;
 
     CountDownTimer timer = new CountDownTimer();
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
@@ -41,6 +43,9 @@ public class CalculationSystem : MonoBehaviour
                 Manicure = status;
                 break;
             case ItemType.BishoujoFigures:
+                BishoujoFigures = status;
+                break;
+            case ItemType.BishoujoFigures2:
                 BishoujoFigures = status;
                 break;
             case ItemType.Mannequin:
@@ -85,6 +90,9 @@ public class CalculationSystem : MonoBehaviour
             case ItemType.MakeUp:
                 MakeUp = status;
                 break;
+            case ItemType.DirtyDish:
+                DirtyDish = status;
+                break;
         }
     }
     // Start is called before the first frame update
@@ -104,29 +112,29 @@ public class CalculationSystem : MonoBehaviour
 
     public void Ending()
     {
-        if (Poster && Poster2 && Manicure && BishoujoFigures && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks)
+        if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
         {
             //ending 1
             //GameManager.ending++;
         }
-        else if (Poster && Poster2 && BishoujoFigures && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform)
+        else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform)
         {
             //ending2
         }
-        else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks)
+        else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
         {
             //ending5
         }
-        else if (Poster && Poster2 && BishoujoFigures && Mannequin && wigs && wigs2 && BedCleaning && Shoes && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks)
+        else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && SchoolUniform && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
         {
             //ending6
         }
         else if(SelectionQuestion.YesOrNo == true)
         {
-            if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks)
+            if (Poster && Poster2 && Manicure && BishoujoFigures && BishoujoFigures2 && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
             {
                 //ending 4
             }

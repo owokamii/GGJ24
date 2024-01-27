@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1546916579412187927, guid: 544c605482623fa41a8e6179920ac505, type: 3}
       propertyPath: m_Name
-      value: Item2 Variant
+      value: DirtyDish
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813687400710421085, guid: 544c605482623fa41a8e6179920ac505, type: 3}
+      propertyPath: ItemType
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7780739583987405719, guid: 544c605482623fa41a8e6179920ac505, type: 3}
       propertyPath: m_LocalPosition.x

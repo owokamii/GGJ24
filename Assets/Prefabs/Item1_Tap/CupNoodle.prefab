@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296974738713124635, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
       propertyPath: m_Name
-      value: Item1 Variant
+      value: CupNoodle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391594085987372019, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
+      propertyPath: itemType
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5754281693000941913, guid: 013f2e7067fec6242afaed2dc5ad212d, type: 3}
       propertyPath: m_LocalPosition.x

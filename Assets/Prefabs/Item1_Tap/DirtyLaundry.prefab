@@ -48,9 +48,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6333781962573066567, guid: 4a61078fa1343054b8c84aba908e38db, type: 3}
+      propertyPath: itemType
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 7433609696426386863, guid: 4a61078fa1343054b8c84aba908e38db, type: 3}
       propertyPath: m_Name
-      value: Item1 Variant
+      value: DirtyLaundry
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

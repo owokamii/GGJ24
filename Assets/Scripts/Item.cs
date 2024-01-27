@@ -45,12 +45,6 @@ public class Item : MonoBehaviour
             CalculationSystem.UpdateItemStatus(itemType, true);
             spriteRenderer.sprite = sprite;
         }
-        //else if(question.YesOrNo == true)
-        //{
-        //    Debug.Log("U was change sprite");
-        //    spritePlayer.sprite = PlayerNewSprite;
-        //    Destroy(gameObject);
-        //}
         else
         {
             CalculationSystem.UpdateItemStatus(itemType, true);

@@ -4,6 +4,7 @@ public enum ItemType
     Poster2,
     Manicure,
     BishoujoFigures,
+    BishoujoFigures2,
     Mannequin,
     wigs,
     wigs2,
@@ -18,4 +19,5 @@ public enum ItemType
     Snacks,
     Socks,
     MakeUp,
+    DirtyDish,
 }

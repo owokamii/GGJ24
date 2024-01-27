@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5188547605028762684, guid: 5974d8b6afdb3cf4ab1f4364d29e78b4, type: 3}
       propertyPath: m_Name
-      value: Item2 Variant
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609496347347899766, guid: 5974d8b6afdb3cf4ab1f4364d29e78b4, type: 3}
+      propertyPath: ItemType
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

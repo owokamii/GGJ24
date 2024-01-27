@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887493692372947603, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: Wig2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023772436282951291, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
+      propertyPath: itemType
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

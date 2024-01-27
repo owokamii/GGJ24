@@ -10,8 +10,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1501685059836247198, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: m_Name
-      value: Item2 Variant
+      value: Dirt
       objectReference: {fileID: 0}
+    - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
+      propertyPath: ItemType
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 5171400513398297730, guid: eebb81c15a067a54282df0073f1375e8, type: 3}
     - target: {fileID: 7663564815287825438, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 153.84134

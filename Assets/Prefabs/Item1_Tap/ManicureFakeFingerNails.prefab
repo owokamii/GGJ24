@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6789248590486423988, guid: 3906feb64d44f6c4c928c6f7f4d9ed3b, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: ManicureFakeFingerNails
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995894978491882844, guid: 3906feb64d44f6c4c928c6f7f4d9ed3b, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

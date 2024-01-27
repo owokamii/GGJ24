@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103567703019434338, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: itemType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103567703019434338, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: PlayerNewSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d195342e7de134f81296da710b82f6, type: 3}
     - target: {fileID: 4584604479252620682, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_Name
-      value: Item Variant
+      value: MannequinMaidOutfit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584604479252620682, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalPosition.x
