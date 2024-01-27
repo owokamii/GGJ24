@@ -46,6 +46,12 @@ public class PlayerController : MonoBehaviour
         HashSet<GameObject> itemsToRemove = new HashSet<GameObject>();
         foreach (var highlightedItem in highlightedItems)
         {
+            if (highlightedItem == null)
+            {
+                itemsToRemove.Add(highlightedItem);
+                continue;
+            }
+
             if (!hitsThisFrame.Contains(highlightedItem))
             {
                 Item itemScript = highlightedItem.GetComponent<Item>();
