@@ -36,6 +36,7 @@ public class HoldingItem : MonoBehaviour
             healthBarCanvasGroup.alpha = 0;
             HealbarWasFull = true;
             animator.enabled = false;
+            CalculateEnding.UpdateItemStatus(ItemType, true);
 
         }
         else if (isCurrentlyInteracting && healthBar.IsFull() && sprite == null)
@@ -66,7 +67,7 @@ public class HoldingItem : MonoBehaviour
 
     public void ChangeSprite()
     {
-        CalculateEnding.UpdateItemStatus(ItemType, true);
+        //CalculateEnding.UpdateItemStatus(ItemType, true);
         spriteRenderer.sprite = sprite[i];
         if(sprite.Length > 1)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.CullingGroup;
 
 public class CalculateEnding: MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class CalculateEnding: MonoBehaviour
 
     public static void UpdateItemStatus(ItemType itemType, bool status)
     {
+        bool statusChanged = false;
         switch (itemType)
         {
             case ItemType.Poster:

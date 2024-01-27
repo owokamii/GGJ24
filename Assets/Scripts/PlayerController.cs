@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask WearingMask;
     public HealthBar healthBar;
     public GameObject selectionPanel;
+    private bool Epress = false;
 
     private HoldingItem currentInteractingItem = null;
 
@@ -21,9 +22,28 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (!Epress && Input.GetKeyDown(KeyCode.E))
         {
+            Epress = true;
             CheckForItems();
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            Epress = false;
+            if (currentInteractingItem != null)
+            {
+                currentInteractingItem.StopInteraction();
+                currentInteractingItem = null;
+            }
+            healthBar.Click = false;
+            healthBarCanvasGroup.alpha = 0;
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            if (currentInteractingItem != null && healthBarCanvasGroup != null)
+            {
+                healthBarCanvasGroup.alpha = 1;
+            }
         }
         else
         {
@@ -33,7 +53,8 @@ public class PlayerController : MonoBehaviour
                 currentInteractingItem = null;
             }
             healthBar.Click = false;
-            healthBarCanvasGroup.alpha = 0;
+            if (healthBarCanvasGroup != null)
+                healthBarCanvasGroup.alpha = 0;
         }
     }
 
@@ -47,6 +68,7 @@ public class PlayerController : MonoBehaviour
         foreach (var hit in hits)
         {
             float distance = (hit.transform.position - transform.position).sqrMagnitude;
+            Debug.Log(hit.gameObject.name + " at distance: " + Mathf.Sqrt(distance));
             if (distance < closestDistance)
             {
                 closestHit = hit;
@@ -56,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
         if (closestHit != null)
         {
+            Debug.Log("Interacting with closest item: " + closestHit.gameObject.name);
             ProcessInteraction(closestHit);
         }
 
@@ -71,10 +94,11 @@ public class PlayerController : MonoBehaviour
         if (((1 << hit.gameObject.layer) & interactableLayer) != 0)
         {
             InteractWithHealthItem(hit.GetComponent<Item>());
+            return;
         }
         else if (((1 << hit.gameObject.layer) & HoldingLayer) != 0)
         {
-            
+
             var item = hit.GetComponent<HoldingItem>();
             if (item != null && currentInteractingItem != item)
             {
@@ -88,6 +112,7 @@ public class PlayerController : MonoBehaviour
                 if (healthBarCanvasGroup != null)
                     healthBarCanvasGroup.alpha = 1;
             }
+            return;
         }
         else if (((1 << hit.gameObject.layer) & WearingMask) != 0)
         {
@@ -96,6 +121,7 @@ public class PlayerController : MonoBehaviour
                 selectionPanel.SetActive(true);
                 Time.timeScale = 0f;
             }
+            return;
         }
     }
 
