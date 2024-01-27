@@ -18,11 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ProcessInputs();
-<<<<<<< Updated upstream
-        //ProcessAnimation();
-=======
         ProcessAnimations();
->>>>>>> Stashed changes
     }
 
     private void ProcessInputs()
@@ -37,25 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
         body.velocity = new Vector2(moveX, moveY);
     }
-
-<<<<<<< Updated upstream
-    //private void ProcessAnimation()
-    //{
-    //    if(moveX != 0)
-    //    {
-    //        animator.SetFloat("moveX", movementSpeed);
-    //    }
-
-    //    if(moveY != 0)
-    //    {
-    //        animator.SetFloat("moveY", movementSpeed);
-    //    }
-    //}
-=======
     private void ProcessAnimations()
     {
         animator.SetFloat("moveX", moveX);
         animator.SetFloat("moveY", moveY);
     }
->>>>>>> Stashed changes
 }
