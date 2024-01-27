@@ -5,13 +5,14 @@ public class HoldingItem : MonoBehaviour
     public ItemType ItemType;
     public HealthBar healthBar;
     public bool isCurrentlyInteracting = false;
-    public Sprite sprite;
+    public Sprite[] sprite;
     
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     public CanvasGroup healthBarCanvasGroup;
     private bool HealbarWasFull;
+    private int i;
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class HoldingItem : MonoBehaviour
     {
         if (isCurrentlyInteracting && healthBar.IsFull() & sprite != null && !HealbarWasFull)
         {
-           ChangeSprite();
+            ChangeSprite();
             animator.SetBool("Interacting", true);
             healthBarCanvasGroup.alpha = 0;
             HealbarWasFull = true;
@@ -59,10 +60,6 @@ public class HoldingItem : MonoBehaviour
 
     public void StopInteraction()
     {
-        //if(healthBar.slider.value != 0)
-        //{
-        //    animator.SetBool("Interacting", false);
-        //}
         isCurrentlyInteracting = false;
         healthBar.Click = false;
     }
@@ -70,7 +67,17 @@ public class HoldingItem : MonoBehaviour
     public void ChangeSprite()
     {
         CalculateEnding.UpdateItemStatus(ItemType, true);
-        spriteRenderer.sprite = sprite;
+        spriteRenderer.sprite = sprite[i];
+        if(sprite.Length > 1)
+        {
+            Invoke("ChangeSpriteAgain", 1);
+        }
+    }
+
+    private void ChangeSpriteAgain()
+    {
+        i++;
+        spriteRenderer.sprite = sprite[i]; 
     }
 }
 

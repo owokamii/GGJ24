@@ -1183,6 +1183,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 570459988}
+    - target: {fileID: 8589379789617793392, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
+      propertyPath: sprite.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589379789617793392, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
+      propertyPath: sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e087f1b5caa3fd41acc9bf135d128ef, type: 3}
+    - target: {fileID: 8589379789617793392, guid: ca4a6f59991f1b64d8cea70e290cf105, type: 3}
+      propertyPath: sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 90fb4e9cb890be94ba7f0d9f92ae68bd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
