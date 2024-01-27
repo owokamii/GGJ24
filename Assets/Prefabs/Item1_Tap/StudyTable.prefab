@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1207125304438909475
+--- !u!1001 &3356621860517207087
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,30 +11,26 @@ PrefabInstance:
     - target: {fileID: -1268426253401133290, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -1268426253401133290, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
-      propertyPath: itemType
-      value: 19
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 95e9a93cef9981b47931a12882d0c358, type: 3}
     - target: {fileID: -1268426253401133290, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: originalSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e6ce3817e6a1f749aec3fe75f66bf89, type: 3}
+      objectReference: {fileID: 21300000, guid: 85d5b4617f92efd499b58b736df8c408, type: 3}
     - target: {fileID: -1268426253401133290, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: spriteHighlight
       value: 
-      objectReference: {fileID: 21300000, guid: aff71674c018885428573d8f5f3aee97, type: 3}
+      objectReference: {fileID: 21300000, guid: 85d5b4617f92efd499b58b736df8c408, type: 3}
     - target: {fileID: 40061370818356668, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 153.84134
       objectReference: {fileID: 0}
     - target: {fileID: 40061370818356668, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 196.3409
       objectReference: {fileID: 0}
     - target: {fileID: 40061370818356668, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.7397915
       objectReference: {fileID: 0}
     - target: {fileID: 40061370818356668, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75,14 +71,14 @@ PrefabInstance:
     - target: {fileID: 4508392145473452399, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e6ce3817e6a1f749aec3fe75f66bf89, type: 3}
+      objectReference: {fileID: 21300000, guid: 85d5b4617f92efd499b58b736df8c408, type: 3}
     - target: {fileID: 4508392145473452399, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6821480689832803326, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
       propertyPath: m_Name
-      value: DirtyDish
+      value: StudyTable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

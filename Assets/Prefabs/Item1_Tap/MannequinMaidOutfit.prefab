@@ -26,31 +26,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_Size.y
-      value: 0.2
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2ff4a7ebaf28dd4381181c0ea58e566, type: 3}
+      objectReference: {fileID: 21300000, guid: 33eae3c32f844c24688cdd7fb978df87, type: 3}
     - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 153.84134
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 196.3409
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7397915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalRotation.w
@@ -108,4 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 5
   question: {fileID: 9002589220859056750, guid: d70fc8a7f3727b449a8421c26cf594d2, type: 3}
-  PlayerNewSprite: {fileID: 21300000, guid: 32d195342e7de134f81296da710b82f6, type: 3}
+  PlayerNewSprite: {fileID: 0}

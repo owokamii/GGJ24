@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: itemType
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -8105531633516693433, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
+      propertyPath: originalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 79f0873751ad9d841b27e9c721203d1f, type: 3}
+    - target: {fileID: -8105531633516693433, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
+      propertyPath: spriteHighlight
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c7d62b3bd3760442949166d5611613a, type: 3}
     - target: {fileID: 122120647162612945, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 153.84134
@@ -52,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4588756026392743938, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c7d62b3bd3760442949166d5611613a, type: 3}
     - target: {fileID: 6887493692372947603, guid: 19f4bc2313a73f54d8d3ef24886ca6ee, type: 3}
       propertyPath: m_Name
       value: Wig2

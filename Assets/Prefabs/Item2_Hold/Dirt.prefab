@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt
       objectReference: {fileID: 0}
+    - target: {fileID: 3631065175283794240, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21c950f0d2d47314c831ced0e508b389, type: 3}
     - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: ItemType
       value: 13

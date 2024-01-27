@@ -23,22 +23,22 @@ PrefabInstance:
     - target: {fileID: 6110964749978525300, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 21729129dd31ba9428ab63cd69994a3a, type: 3}
     - target: {fileID: 6110964749978525300, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 153.84134
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 196.3409
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7397915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 6
+  spriteHighlight: {fileID: 21300000, guid: feec48c0db77974439ce818be1a69004, type: 3}
+  originalSprite: {fileID: 21300000, guid: 21729129dd31ba9428ab63cd69994a3a, type: 3}
   sprite: {fileID: 0}
   spritePlayer: {fileID: 0}
   PlayerNewSprite: {fileID: 0}
