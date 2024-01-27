@@ -25,6 +25,7 @@ public class CalculationSystem : MonoBehaviour
     public static bool MakeUp = false;
 
     CountDownTimer timer = new CountDownTimer();
+    SelectionQuestion SelectionQuestion = new SelectionQuestion();
 
     public static void UpdateItemStatus(ItemType itemType, bool status)
     {
@@ -122,7 +123,14 @@ public class CalculationSystem : MonoBehaviour
         {
             //ending6
         }
-        //else if(ending4)
+        else if(SelectionQuestion.YesOrNo == true)
+        {
+            if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks)
+            {
+                //ending 4
+            }
+        }
         else
         {
             //ending3

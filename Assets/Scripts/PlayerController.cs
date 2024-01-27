@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public float interactionRange = 1.5f;
     public LayerMask interactableLayer;
     public LayerMask HoldingLayer;
+    public LayerMask WearingMask;
     public HealthBar healthBar;
+    public GameObject selectionPanel;
 
     private HoldingItem currentInteractingItem = null;
 
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
         Collider2D closestHit = null;
         float closestDistance = float.MaxValue;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRange, interactableLayer | HoldingLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, interactionRange, interactableLayer | HoldingLayer | WearingMask);
 
         foreach (var hit in hits)
         {
@@ -69,6 +71,15 @@ public class PlayerController : MonoBehaviour
                 }
                 currentInteractingItem = item;
                 currentInteractingItem.StartInteraction();
+            }
+        }
+        else if (((1 << hit.gameObject.layer) & WearingMask) != 0)
+        {
+            if (selectionPanel != null)
+            {
+                //InteractWithHealthItem(hit.GetComponent<Item>());
+                selectionPanel.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
     }

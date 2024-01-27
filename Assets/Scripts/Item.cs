@@ -9,20 +9,50 @@ public class Item : MonoBehaviour
     public Sprite sprite;
     private SpriteRenderer spriteRenderer;
 
+    public SelectionQuestion question;
+
+    public SpriteRenderer spritePlayer;
+    public Sprite PlayerNewSprite;
+
     public void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        question.OnSelectionComplete += HandleSelectionComplete;
+    }
+
+    void HandleSelectionComplete(bool selection)
+    {
+        if (selection)
+        {
+            CalculationSystem.UpdateItemStatus(itemType, true);
+            spritePlayer.sprite = PlayerNewSprite;
+            Destroy(gameObject);
+            //Debug.Log("Yes");
+        }
+        else
+        {
+            CalculationSystem.UpdateItemStatus(itemType, true);
+            Destroy(gameObject);
+            //Debug.Log("No");
+        }
     }
 
     public void Interact()
     {
-        if (spriteRenderer != null)
+        if (sprite != null)
         {
+            Debug.Log("First");
+            CalculationSystem.UpdateItemStatus(itemType, true);
             spriteRenderer.sprite = sprite;
         }
+        //else if(question.YesOrNo == true)
+        //{
+        //    Debug.Log("U was change sprite");
+        //    spritePlayer.sprite = PlayerNewSprite;
+        //    Destroy(gameObject);
+        //}
         else
         {
-            Debug.Log("u was click E");
             CalculationSystem.UpdateItemStatus(itemType, true);
             Destroy(gameObject);
         }
