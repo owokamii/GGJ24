@@ -13,6 +13,7 @@ public class SelectionQuestion : MonoBehaviour
         YesOrNo = false;
         panel.SetActive(false);
         Time.timeScale = 1.0f;
+        Debug.Log("was no call");
         OnSelectionComplete?.Invoke(YesOrNo);
     }
 
@@ -21,6 +22,7 @@ public class SelectionQuestion : MonoBehaviour
         YesOrNo = true;
         panel.SetActive(false);
         Time.timeScale = 1.0f;
+        Debug.Log("was call");
         OnSelectionComplete?.Invoke(YesOrNo);
     }
 }

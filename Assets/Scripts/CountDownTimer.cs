@@ -15,7 +15,7 @@ public class CountDownTimer : MonoBehaviour
             timeRemaining -= Time.deltaTime;
             UpdateCountdownText();
         }
-        else
+        else if (!isTimeLimit)
         {
             countdownText.text = "00:00";
             TimeLimit();
@@ -24,16 +24,15 @@ public class CountDownTimer : MonoBehaviour
 
     void UpdateCountdownText()
     {
-        TimeSpan time = TimeSpan.FromSeconds(timeRemaining);
+        TimeSpan time = TimeSpan.FromSeconds(Math.Max(0, timeRemaining));
         countdownText.text = time.ToString(@"mm\:ss");
     }
 
     private void TimeLimit()
     {
-        if (timeRemaining == 0)
-        {
-            Time.timeScale = 0;
-            isTimeLimit = true;
-        }
+        Time.timeScale = 0;
+        isTimeLimit = true;
+        Debug.Log("Time limit reached");
     }
+
 }

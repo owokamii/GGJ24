@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wig1
       objectReference: {fileID: 0}
+    - target: {fileID: 6110964749978525300, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110964749978525300, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7697169975788405415, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 153.84134
@@ -60,8 +68,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -521159789708597390, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3816027034586963173, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8105531633516693433}
   m_SourcePrefab: {fileID: 100100000, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+--- !u!1 &6887493692372947603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3816027034586963173, guid: dec3d14c09f42ee47a12fbb3cfeb6af1, type: 3}
+  m_PrefabInstance: {fileID: 7737196645954473590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-8105531633516693433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887493692372947603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b6f73d5f849894dbf8e81541829c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 6
+  sprite: {fileID: 0}
+  spritePlayer: {fileID: 0}
+  PlayerNewSprite: {fileID: 0}

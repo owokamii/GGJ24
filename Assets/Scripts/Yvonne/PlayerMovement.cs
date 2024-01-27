@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ProcessInputs();
-        ProcessAnimation();
+        //ProcessAnimation();
     }
 
     private void ProcessInputs()
@@ -34,16 +34,16 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(moveX, moveY);
     }
 
-    private void ProcessAnimation()
-    {
-        if(moveX != 0)
-        {
-            animator.SetFloat("moveX", movementSpeed);
-        }
+    //private void ProcessAnimation()
+    //{
+    //    if(moveX != 0)
+    //    {
+    //        animator.SetFloat("moveX", movementSpeed);
+    //    }
 
-        if(moveY != 0)
-        {
-            animator.SetFloat("moveY", movementSpeed);
-        }
-    }
+    //    if(moveY != 0)
+    //    {
+    //        animator.SetFloat("moveY", movementSpeed);
+    //    }
+    //}
 }

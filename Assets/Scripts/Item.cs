@@ -9,32 +9,12 @@ public class Item : MonoBehaviour
     public Sprite sprite;
     private SpriteRenderer spriteRenderer;
 
-    public SelectionQuestion question;
-
     public SpriteRenderer spritePlayer;
     public Sprite PlayerNewSprite;
 
-    public void Start()
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        question.OnSelectionComplete += HandleSelectionComplete;
-    }
-
-    void HandleSelectionComplete(bool selection)
-    {
-        if (selection)
-        {
-            CalculationSystem.UpdateItemStatus(itemType, true);
-            spritePlayer.sprite = PlayerNewSprite;
-            Destroy(gameObject);
-            //Debug.Log("Yes");
-        }
-        else
-        {
-            CalculationSystem.UpdateItemStatus(itemType, true);
-            Destroy(gameObject);
-            //Debug.Log("No");
-        }
     }
 
     public void Interact()
@@ -44,6 +24,7 @@ public class Item : MonoBehaviour
             Debug.Log("First");
             CalculationSystem.UpdateItemStatus(itemType, true);
             spriteRenderer.sprite = sprite;
+            //Destroy(gameObject);
         }
         else
         {

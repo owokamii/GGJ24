@@ -117,19 +117,23 @@ public class CalculationSystem : MonoBehaviour
         {
             //ending 1
             //GameManager.ending++;
+            GameManager.instance.UnlockEnding("Ending1");
         }
         else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && MakeUp && SchoolUniform)
         {
             //ending2
+            GameManager.instance.UnlockEnding("Ending2");
         }
         else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
         {
             //ending5
+            GameManager.instance.UnlockEnding("Ending5");
         }
         else if (Poster && Poster2 && BishoujoFigures && BishoujoFigures2 && Mannequin && wigs && wigs2 && BedCleaning && Shoes && SchoolUniform && PlantsDrop && Water
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
         {
             //ending6
+            GameManager.instance.UnlockEnding("Ending6");
         }
         else if(SelectionQuestion.YesOrNo == true)
         {
@@ -137,11 +141,13 @@ public class CalculationSystem : MonoBehaviour
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish)
             {
                 //ending 4
+                GameManager.instance.UnlockEnding("Ending4");
             }
         }
         else
         {
             //ending3
+            GameManager.instance.UnlockEnding("Ending5");
         }
     }
 }

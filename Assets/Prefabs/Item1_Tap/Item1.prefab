@@ -102,6 +102,9 @@ MonoBehaviour:
   itemType: 0
   sprite: {fileID: 0}
   question: {fileID: 9002589220859056750, guid: d70fc8a7f3727b449a8421c26cf594d2, type: 3}
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 256
   spritePlayer: {fileID: 6527963332521123370, guid: eebb81c15a067a54282df0073f1375e8, type: 3}
   PlayerNewSprite: {fileID: 0}
 --- !u!50 &253062657912222164

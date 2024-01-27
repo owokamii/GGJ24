@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8897479265673370118}
   - component: {fileID: 9002589220859056750}
   - component: {fileID: 3372424083731354485}
+  - component: {fileID: 2281676231364692126}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -85,3 +86,15 @@ MonoBehaviour:
   - {fileID: 1501685059836247198, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
   - {fileID: 1546916579412187927, guid: 544c605482623fa41a8e6179920ac505, type: 3}
   waterPosition: []
+--- !u!114 &2281676231364692126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846613322434320792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ddce98741a2b040b97b7a7961a7089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

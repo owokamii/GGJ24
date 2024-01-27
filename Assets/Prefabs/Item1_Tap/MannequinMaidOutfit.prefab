@@ -24,6 +24,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2ff4a7ebaf28dd4381181c0ea58e566, type: 3}
+    - target: {fileID: 6891645653944166171, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7042326254417624008, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
       propertyPath: m_LocalPosition.x
       value: 153.84134
@@ -64,8 +80,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1103567703019434338, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4584604479252620682, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -521159789708597390}
   m_SourcePrefab: {fileID: 100100000, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+--- !u!1 &3816027034586963173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4584604479252620682, guid: 53f61d5b903062f4eb36e181d9720914, type: 3}
+  m_PrefabInstance: {fileID: 822620675638540655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-521159789708597390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816027034586963173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eea30a15bf2a0a42bde735fa96d941d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 5
+  question: {fileID: 9002589220859056750, guid: d70fc8a7f3727b449a8421c26cf594d2, type: 3}
+  PlayerNewSprite: {fileID: 21300000, guid: 32d195342e7de134f81296da710b82f6, type: 3}
