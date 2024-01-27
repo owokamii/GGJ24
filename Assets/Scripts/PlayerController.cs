@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -13,6 +14,14 @@ public class PlayerController : MonoBehaviour
     public GameObject selectionPanel;
 
     private HoldingItem currentInteractingItem = null;
+
+    public CanvasGroup healthBarCanvasGroup;
+
+    private void Awake()
+    {
+        if (healthBarCanvasGroup != null)
+            healthBarCanvasGroup.alpha = 0;
+    }
 
     private void Update()
     {
@@ -52,6 +61,12 @@ public class PlayerController : MonoBehaviour
         {
             ProcessInteraction(closestHit);
         }
+
+        if (closestHit == null || !Input.GetKey(KeyCode.E))
+        {
+            if (healthBarCanvasGroup != null)
+                healthBarCanvasGroup.alpha = 0;
+        }
     }
 
     private void ProcessInteraction(Collider2D hit)
@@ -62,6 +77,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (((1 << hit.gameObject.layer) & HoldingLayer) != 0)
         {
+            
             var item = hit.GetComponent<HoldingItem>();
             if (item != null && currentInteractingItem != item)
             {
@@ -71,6 +87,9 @@ public class PlayerController : MonoBehaviour
                 }
                 currentInteractingItem = item;
                 currentInteractingItem.StartInteraction();
+
+                if (healthBarCanvasGroup != null)
+                    healthBarCanvasGroup.alpha = 1;
             }
         }
         else if (((1 << hit.gameObject.layer) & WearingMask) != 0)

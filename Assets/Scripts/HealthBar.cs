@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public float fillSpeed = 0.5f;
     public bool Click = false;
+    
 
     private void Update()
     {

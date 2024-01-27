@@ -9,10 +9,16 @@ public class HoldingItem : MonoBehaviour
     public bool isCurrentlyInteracting = false;
     public Sprite sprite;
     private SpriteRenderer spriteRenderer;
+    public CanvasGroup healthBarCanvasGroup;
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        GameObject healthBarObj = GameObject.FindGameObjectWithTag("HealthBar");
+        if (healthBarObj != null)
+        {
+            healthBarCanvasGroup = healthBarObj.GetComponent<CanvasGroup>();
+        }
+            spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -20,9 +26,11 @@ public class HoldingItem : MonoBehaviour
         if (isCurrentlyInteracting && healthBar.IsFull() & sprite != null)
         {
            ChangeSprite();
+            healthBarCanvasGroup.alpha = 0;
         }
         else if (isCurrentlyInteracting && healthBar.IsFull())
         {
+            healthBarCanvasGroup.alpha = 0;
             CalculationSystem.UpdateItemStatus(ItemType, true);
             Destroy(gameObject);
         }
