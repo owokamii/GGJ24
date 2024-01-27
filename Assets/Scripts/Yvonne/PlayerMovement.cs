@@ -3,27 +3,31 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    [SerializeField] private Animator animator;
 
+    private Animator animator;
     private Rigidbody2D body;
-    private Vector2 direction;
     private float moveX;
     private float moveY;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         ProcessInputs();
+<<<<<<< Updated upstream
         //ProcessAnimation();
+=======
+        ProcessAnimations();
+>>>>>>> Stashed changes
     }
 
     private void ProcessInputs()
     {
-        moveX = Input.GetAxisRaw("Horizontal") * movementSpeed  ;
+        moveX = Input.GetAxisRaw("Horizontal") * movementSpeed;
         moveY = Input.GetAxisRaw("Vertical") * movementSpeed;
 
         if (Mathf.Abs(moveX) > 0 && Mathf.Abs(moveY) > 0)
@@ -34,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(moveX, moveY);
     }
 
+<<<<<<< Updated upstream
     //private void ProcessAnimation()
     //{
     //    if(moveX != 0)
@@ -46,4 +51,11 @@ public class PlayerMovement : MonoBehaviour
     //        animator.SetFloat("moveY", movementSpeed);
     //    }
     //}
+=======
+    private void ProcessAnimations()
+    {
+        animator.SetFloat("moveX", moveX);
+        animator.SetFloat("moveY", moveY);
+    }
+>>>>>>> Stashed changes
 }
