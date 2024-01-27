@@ -24,12 +24,20 @@ public class CalculateEnding: MonoBehaviour
     public static bool Fridge = false;
     public static bool StudyTable = false;
 
-    CountDownTimer timer = new CountDownTimer();
+    private CountDownTimer timer;
+    private bool wasEnding = false;
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
 
+    void Start()
+    {
+        timer = FindObjectOfType<CountDownTimer>();
+        if (timer == null)
+        {
+            Debug.LogError("CountDownTimer not found in the scene.");
+        }
+    }
     public static void UpdateItemStatus(ItemType itemType, bool status)
     {
-        bool statusChanged = false;
         switch (itemType)
         {
             case ItemType.Poster:
@@ -91,18 +99,16 @@ public class CalculateEnding: MonoBehaviour
                 break;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer.isTimeLimit)
+        if (timer != null && timer.isTimeLimit)
         {
-            Ending();
+            if (!wasEnding)
+            {
+                Ending();
+            }
         }
     }
 
@@ -137,12 +143,15 @@ public class CalculateEnding: MonoBehaviour
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
             {
                 //ending 4
+                Debug.Log("TimeOut");
                 GameManager.instance.UnlockEnding("Ending4");
             }
         }
         else
         {
             //ending3
+            Debug.Log("Bad Ending");
+            wasEnding = true;
             GameManager.instance.UnlockEnding("Ending3");
         }
     }
