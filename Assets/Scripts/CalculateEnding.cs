@@ -2,6 +2,7 @@ using UnityEngine;
 using static UnityEngine.CullingGroup;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.UI;
+using TMPro;
 
 public class CalculateEnding: MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class CalculateEnding: MonoBehaviour
     public static bool StudyTable = false;
 
     private CountDownTimer timer;
+    public TextMeshProUGUI endingText;
     public bool wasEnding = false;
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
     public GameObject EndingPanel;
@@ -146,6 +148,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite1;
+                endingText.text = "";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending1");
@@ -156,6 +159,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite2;
+                endingText.text = "";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending2");
@@ -166,6 +170,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite5;
+                endingText.text = "";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending5");
@@ -177,6 +182,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite6;
+                endingText.text = "";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending6");
@@ -190,6 +196,7 @@ public class CalculateEnding: MonoBehaviour
                 if (pictureShowingImage != null)
                 {
                     pictureShowingImage.sprite = endingSprite4;
+                    endingText.text = "";
                     wasEnding = true;
                 }
                 GameManager.instance.UnlockEnding("Ending4");
@@ -201,6 +208,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite3;
+                endingText.text = "";
                 Debug.Log("Bad Ending");
                 wasEnding = true;
             }
