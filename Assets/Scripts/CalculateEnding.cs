@@ -168,8 +168,13 @@ public class CalculateEnding: MonoBehaviour
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
             {
                 //ending 4
-                Debug.Log("TimeOut");
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite4;
+                    wasEnding = true;
+                }
                 GameManager.instance.UnlockEnding("Ending4");
+                GameManager.instance.PrintEndings();
             }
         }
         else
@@ -182,6 +187,7 @@ public class CalculateEnding: MonoBehaviour
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending3");
+            GameManager.instance.PrintEndings();
         }
     }
 }

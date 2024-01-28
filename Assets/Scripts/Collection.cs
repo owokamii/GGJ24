@@ -13,7 +13,7 @@ public class Collection : MonoBehaviour
         UpdateCollectionDisplay();
     }
 
-    void UpdateCollectionDisplay()
+    public void UpdateCollectionDisplay()
     {
         Dictionary<string, bool> endings = GameManager.instance.endings;
 

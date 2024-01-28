@@ -51,6 +51,16 @@ public class GameManager : MonoBehaviour
         {
             endings[endingKey] = true;
             SaveData();
+
+            Collection collectionScript = FindObjectOfType<Collection>();
+            if (collectionScript != null)
+            {
+                collectionScript.UpdateCollectionDisplay();
+            }
+            else
+            {
+                Debug.LogError("Collection script not found in the scene.");
+            }
         }
     }
 
@@ -76,5 +86,13 @@ public class GameManager : MonoBehaviour
     internal static void RegisterButton(string name, ButtonControl buttonControl)
     {
         throw new NotImplementedException();
+    }
+
+    public void PrintEndings()
+    {
+        foreach (var ending in endings)
+        {
+            Debug.Log($"Ending: {ending.Key}, Unlocked: {ending.Value}");
+        }
     }
 }
