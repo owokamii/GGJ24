@@ -127,7 +127,6 @@ public class CalculateEnding: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(wasEnding);
         if (timer != null && timer.isTimeLimit)
         {
             if (!wasEnding)

@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 5171400513398297730, guid: eebb81c15a067a54282df0073f1375e8, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3840513344174841300, guid: 8c51140ceb0ac5647a85cc651582805a, type: 3}
       propertyPath: sprite.Array.data[0]
       value: 
