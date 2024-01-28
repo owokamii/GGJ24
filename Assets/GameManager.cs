@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,8 +17,6 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             LoadData();
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -55,42 +54,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void RegisterButton(string buttonName, Button button)
     {
-        if (selectionQuestion == null)
+        switch (buttonName)
         {
-            Debug.LogError("SelectionQuestion reference is lost or not set.");
-            return;
-        }
-
-        Button Yes = GameObject.Find("Yes").GetComponent<Button>();
-        Button No = GameObject.Find("No").GetComponent<Button>();
-        Button Retry = GameObject.Find("Retry").GetComponent<Button>();
-        Button Menu = GameObject.Find("Menu").GetComponent<Button>();
-
-        if (Yes != null && No != null && Retry != null && Menu != null)
-        {
-            Debug.Log("u was reset all");
-            Yes.onClick.RemoveAllListeners();
-            Yes.onClick.AddListener(selectionQuestion.Yes);
-
-            No.onClick.RemoveAllListeners();
-            No.onClick.AddListener(selectionQuestion.No);
-
-            Retry.onClick.RemoveAllListeners();
-            Retry.onClick.AddListener(selectionQuestion.Retry);
-
-            Menu.onClick.RemoveAllListeners();
-            Menu.onClick.AddListener(selectionQuestion.Menu);
-        }
-        else
-        {
-            Debug.LogError("One or more buttons are not found in the current scene.");
+            case "Yes":
+                button.onClick.AddListener(selectionQuestion.Yes);
+                break;
+            case "No":
+                button.onClick.AddListener(selectionQuestion.No);
+                break;
+            case "Retry":
+                button.onClick.AddListener(selectionQuestion.Retry);
+                break;
+            case "Menu":
+                button.onClick.AddListener(selectionQuestion.Menu);
+                break;
         }
     }
 
-    void OnDestroy()
+    internal static void RegisterButton(string name, ButtonControl buttonControl)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        throw new NotImplementedException();
     }
 }
