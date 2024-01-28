@@ -439,6 +439,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184082685}
   m_CullTransparentMesh: 1
+--- !u!1 &232771393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232771395}
+  - component: {fileID: 232771394}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &232771394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232771393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8faaccadca42a4e86f2aba7dd21c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixer: {fileID: -9039995884014245546, guid: 47184ed61e7c76a47a79d993fb434e1d, type: 2}
+  sfxMixer: {fileID: -8615648120043438194, guid: 47184ed61e7c76a47a79d993fb434e1d, type: 2}
+  music:
+  - name: BGM
+    loop: 1
+    clip: {fileID: 8300000, guid: 7b0b22c1607106d44851c787e814b874, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  sfx: []
+--- !u!4 &232771395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232771393}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 305.35226, y: 52.65326, z: -0.47910196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294682195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,3 +4137,4 @@ SceneRoots:
   - {fileID: 143775115}
   - {fileID: 1810479602}
   - {fileID: 1642461600}
+  - {fileID: 232771395}

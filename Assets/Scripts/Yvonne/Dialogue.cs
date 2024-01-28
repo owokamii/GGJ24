@@ -1,9 +1,11 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
+    private Animator animator;
     public GameObject[] nextCutscene;
     public GameObject nextDialogue;
     public GameObject ring;
@@ -15,6 +17,8 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         if (index < nextCutscene.Length)
         {
             nextCutscene[0].SetActive(true);
@@ -56,25 +60,25 @@ public class Dialogue : MonoBehaviour
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
+        //animator.SetBool("DialogueBox", false);
     }
 
     private void NextLine()
     {
-        if(index < lines.Length - 1)
+        //animator.SetBool("DialogueBox", true);
+
+        if (index < lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
 
-            Debug.Log(index);
             switch(index)
             {
                 case 1:
-                    Debug.Log("A");
                     nextCutscene[1].SetActive(true);
                     break;
                 case 2:
-                    Debug.Log("B");
                     nextCutscene[2].SetActive(true);
                     break;
             }
@@ -83,8 +87,12 @@ public class Dialogue : MonoBehaviour
         {
             if(nextDialogue != null)
             {
-                ring.SetActive(true);
+                Invoke("TriggerRing", 1);
                 Invoke("TriggerDialogue", 3.0f);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             gameObject.SetActive(false);
         }
@@ -93,5 +101,10 @@ public class Dialogue : MonoBehaviour
     private void TriggerDialogue()
     {
         nextDialogue.SetActive(true);
+    }
+
+    private void TriggerRing()
+    {
+        ring.SetActive(true);
     }
 }
