@@ -143,23 +143,42 @@ public class CalculateEnding: MonoBehaviour
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
         {
             //ending 1
-            //GameManager.ending++;
+            if (pictureShowingImage != null)
+            {
+                pictureShowingImage.sprite = endingSprite1;
+                wasEnding = true;
+            }
             GameManager.instance.UnlockEnding("Ending1");
         }
         else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && StudyTable)
         {
             //ending2
+            if (pictureShowingImage != null)
+            {
+                pictureShowingImage.sprite = endingSprite2;
+                wasEnding = true;
+            }
             GameManager.instance.UnlockEnding("Ending2");
         }
         else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
         {
             //ending5
+            if (pictureShowingImage != null)
+            {
+                pictureShowingImage.sprite = endingSprite5;
+                wasEnding = true;
+            }
             GameManager.instance.UnlockEnding("Ending5");
         }
         else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && PlantsDrop && Water
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
         {
             //ending6
+            if (pictureShowingImage != null)
+            {
+                pictureShowingImage.sprite = endingSprite6;
+                wasEnding = true;
+            }
             GameManager.instance.UnlockEnding("Ending6");
         }
         else if(SelectionQuestion.YesOrNo == true)
@@ -174,7 +193,6 @@ public class CalculateEnding: MonoBehaviour
                     wasEnding = true;
                 }
                 GameManager.instance.UnlockEnding("Ending4");
-                GameManager.instance.PrintEndings();
             }
         }
         else
