@@ -10,9 +10,20 @@ public class SelectionQuestion : MonoBehaviour
     public GameObject panel;
     public  CountDownTimer timer;
     public CalculateEnding endingScript;
+    public Animator playerAnimation;
+    public RuntimeAnimatorController newController;
 
     public void Start()
     {
+        GameObject Player = GameObject.Find("Player");
+        if (Player != null)
+        {
+            playerAnimation = Player.GetComponent<Animator>();
+            if (playerAnimation == null)
+            {
+                Debug.LogError("Image component on PictureShowing not found.");
+            }
+        }
         timer = FindObjectOfType<CountDownTimer>();
         if (timer == null)
         {
@@ -40,6 +51,7 @@ public class SelectionQuestion : MonoBehaviour
         panel.SetActive(false);
         Time.timeScale = 1.0f;
         Debug.Log("was call");
+        playerAnimation.runtimeAnimatorController = newController;
         OnSelectionComplete?.Invoke(YesOrNo);
     }
 
