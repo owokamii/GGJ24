@@ -47,20 +47,20 @@ public class GameManager : MonoBehaviour
 
     public void UnlockEnding(string endingKey)
     {
-        if (!endings.ContainsKey(endingKey))
+        if (!endings.ContainsKey(endingKey) || !endings[endingKey])
         {
             endings[endingKey] = true;
             SaveData();
 
-            Collection collectionScript = FindObjectOfType<Collection>();
-            if (collectionScript != null)
-            {
-                collectionScript.UpdateCollectionDisplay();
-            }
-            else
-            {
-                Debug.LogError("Collection script not found in the scene.");
-            }
+            //Collection collectionScript = FindObjectOfType<Collection>();
+            //if (collectionScript != null)
+            //{
+            //    collectionScript.UpdateCollectionDisplay();
+            //}
+            //else
+            //{
+            //    Debug.LogError("Collection script not found in the scene.");
+            //}
         }
     }
 
