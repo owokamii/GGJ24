@@ -282,6 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 143775115}
+  - component: {fileID: 143775116}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -305,6 +306,18 @@ Transform:
   - {fileID: 1356012154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143775116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143775114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d9cde073fc08943ad3d762b209fdad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &184082685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3210,7 +3223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1716224852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3253,7 +3266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bf837cd3cb32f264cb37175ecc795c77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e710f260f25aa224d9e2e28ca677c029, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
