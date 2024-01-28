@@ -8,6 +8,11 @@ public class CountDownTimer : MonoBehaviour
     public float timeRemaining = 60;
     public bool isTimeLimit = false;
 
+    public void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Update()
     {
         if (timeRemaining > 0)

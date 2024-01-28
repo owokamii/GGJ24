@@ -1,6 +1,7 @@
 using UnityEngine;
 using static UnityEngine.CullingGroup;
 using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.UI;
 
 public class CalculateEnding: MonoBehaviour
 {
@@ -25,11 +26,34 @@ public class CalculateEnding: MonoBehaviour
     public static bool StudyTable = false;
 
     private CountDownTimer timer;
-    private bool wasEnding = false;
+    public bool wasEnding = false;
     SelectionQuestion SelectionQuestion = new SelectionQuestion();
+    public GameObject EndingPanel;
+    public Image pictureShowingImage;
+    public Sprite endingSprite1;
+    public Sprite endingSprite2;
+    public Sprite endingSprite3;
+    public Sprite endingSprite4;
+    public Sprite endingSprite5;
+    public Sprite endingSprite6;
 
     void Start()
     {
+        wasEnding = false;
+        GameObject pictureShowingObj = GameObject.Find("EndingPanel/PictureShowing");
+        if (pictureShowingObj != null)
+        {
+            pictureShowingImage = pictureShowingObj.GetComponent<Image>();
+            if (pictureShowingImage == null)
+            {
+                Debug.LogError("Image component on PictureShowing not found.");
+            }
+        }
+        else
+        {
+            Debug.LogError("PictureShowing GameObject not found.");
+        }
+
         timer = FindObjectOfType<CountDownTimer>();
         if (timer == null)
         {
@@ -103,10 +127,12 @@ public class CalculateEnding: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(wasEnding);
         if (timer != null && timer.isTimeLimit)
         {
             if (!wasEnding)
             {
+                EndingPanel.SetActive(true);
                 Ending();
             }
         }
@@ -150,8 +176,12 @@ public class CalculateEnding: MonoBehaviour
         else
         {
             //ending3
-            Debug.Log("Bad Ending");
-            wasEnding = true;
+            if (pictureShowingImage != null)
+            {
+                pictureShowingImage.sprite = endingSprite3;
+                Debug.Log("Bad Ending");
+                wasEnding = true;
+            }
             GameManager.instance.UnlockEnding("Ending3");
         }
     }
