@@ -148,7 +148,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite1;
-                endingText.text = "";
+                endingText.text = "I cleaned everything, but Mom never came by.";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending1");
@@ -159,7 +159,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite2;
-                endingText.text = "";
+                endingText.text = "Nothing suspicious here…";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending2");
@@ -170,7 +170,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite5;
-                endingText.text = "";
+                endingText.text = "We look like sisters!";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending5");
@@ -182,7 +182,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite6;
-                endingText.text = "";
+                endingText.text = "Pretty sure today is mother’s day…";
                 wasEnding = true;
             }
             GameManager.instance.UnlockEnding("Ending6");
@@ -196,7 +196,7 @@ public class CalculateEnding: MonoBehaviour
                 if (pictureShowingImage != null)
                 {
                     pictureShowingImage.sprite = endingSprite4;
-                    endingText.text = "";
+                    endingText.text = "I swear, it’s a gift from a friend!";
                     wasEnding = true;
                 }
                 GameManager.instance.UnlockEnding("Ending4");
@@ -208,7 +208,7 @@ public class CalculateEnding: MonoBehaviour
             if (pictureShowingImage != null)
             {
                 pictureShowingImage.sprite = endingSprite3;
-                endingText.text = "";
+                endingText.text = "I was kicked out of the house afterward.";
                 Debug.Log("Bad Ending");
                 wasEnding = true;
             }
