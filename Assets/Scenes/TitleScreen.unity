@@ -474,10 +474,16 @@ MonoBehaviour:
   - name: BGM
     loop: 1
     clip: {fileID: 8300000, guid: 7b0b22c1607106d44851c787e814b874, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
-  sfx: []
+  sfx:
+  - name: SFX
+    loop: 0
+    clip: {fileID: 8300000, guid: 0ee8039262133de489297cc58635c783, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &232771395
 Transform:
   m_ObjectHideFlags: 0
@@ -1483,6 +1489,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 232771394}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &667712246
@@ -3799,6 +3817,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 232771394}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1956043658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,6 +4093,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 232771394}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2101282685

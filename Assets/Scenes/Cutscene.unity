@@ -1366,7 +1366,7 @@ MonoBehaviour:
   - name: BGM
     loop: 1
     clip: {fileID: 8300000, guid: a863efeac506ce242bf4ddee292ac580, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
   sfx: []
