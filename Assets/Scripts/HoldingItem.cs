@@ -45,6 +45,7 @@ public class HoldingItem : MonoBehaviour
         }
         else if (isCurrentlyInteracting && healthBar.IsFull() && sprite == null)
         {
+            Debug.Log("helloworld");
             healthBarCanvasGroup.alpha = 0;
             CalculateEnding.UpdateItemStatus(ItemType, true);
             Destroy(gameObject);
