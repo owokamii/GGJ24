@@ -1,25 +1,29 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     public GameObject[] nextCutscene;
     public GameObject nextDialogue;
+    public GameObject ring;
     public TMP_Text textComponent;
     public string[] lines;
     public float textSpeed;
-
-    public Image[] cutscenes;
 
     private int index;
 
     private void Start()
     {
-        nextCutscene[0].SetActive(true);
+        if (index < nextCutscene.Length)
+        {
+            nextCutscene[0].SetActive(true);
+        }
+        else
+        {
+        }
         textComponent.text = string.Empty;
-        StartDialogue();
+        Invoke("StartDialogue", 1);
     }
 
     private void Update()
@@ -79,6 +83,7 @@ public class Dialogue : MonoBehaviour
         {
             if(nextDialogue != null)
             {
+                ring.SetActive(true);
                 Invoke("TriggerDialogue", 3.0f);
             }
             gameObject.SetActive(false);
