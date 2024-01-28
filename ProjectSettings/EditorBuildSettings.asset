@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 28bb5d31440aefb4fb908eb9e97c882d
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: d37b00ff1666ca749a35ff43643947d8
+  - enabled: 1
     path: Assets/Scenes/YvoneScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
