@@ -103,4 +103,15 @@ public class GameManager : MonoBehaviour
             item.ResetInteraction();
         }
     }
+
+    public void ResetData()
+    {
+        var keys = new List<string>(endings.Keys);
+        foreach (var key in keys)
+        {
+            endings[key] = false;
+        }
+
+        SaveData();
+    }
 }
