@@ -25,6 +25,7 @@ public class CalculateEnding: MonoBehaviour
     public static bool StudyTable = false;
 
     public TMP_Text boolChecks;
+    public Image currentImage;
 
     private CountDownTimer timer;
     public TextMeshProUGUI endingText;
@@ -130,6 +131,7 @@ public class CalculateEnding: MonoBehaviour
     void Update()
     {
         BoolChecks();
+
         if (timer != null && timer.isTimeLimit)
         {
             if (!wasEnding)
@@ -142,6 +144,7 @@ public class CalculateEnding: MonoBehaviour
 
     public void Ending()
     {
+
         if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
         {
@@ -223,5 +226,6 @@ public class CalculateEnding: MonoBehaviour
         boolChecks.text = "Poster: " + Poster.ToString() + "\nPoster2: " + Poster2.ToString() + "\nManicure: " + Manicure.ToString() + "\nFigures: " + BishoujoFigures.ToString() + "\nWigs: " + wigs.ToString() + "\nWigs2:" + wigs2.ToString() +
         "\nBedCleaning: " + BedCleaning.ToString() + "\nShoes: " + Shoes.ToString() + "\nPlants: " + PlantsDrop.ToString() + "\nWater: " + Water.ToString() + "\nDirt: " + dirt.ToString() + "\nLaundry: " + Laundry.ToString() + "\nMaggicups: " + MaggiCups.ToString() +
         "\nSnacks: " + Snacks.ToString() + "\nSocks: " + Socks.ToString() + "\nMakeUp: " + MakeUp.ToString() + "\nDirtyDish: " + DirtyDish.ToString() + "\nFridge: " + Fridge.ToString() + "\nStudyTable: " + StudyTable.ToString();
-}
+        Debug.Log(currentImage); 
+    }
 }
