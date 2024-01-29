@@ -2044,6 +2044,7 @@ MonoBehaviour:
   slider: {fileID: 191955148}
   fillSpeed: 0.5
   Click: 0
+  healthBarCanvasGroup: {fileID: 191955149}
 --- !u!114 &570459989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,6 +2069,7 @@ MonoBehaviour:
     m_Bits: 256
   healthBar: {fileID: 570459988}
   selectionPanel: {fileID: 1403113084}
+  question: {fileID: 0}
   healthBarCanvasGroup: {fileID: 191955149}
 --- !u!1 &583659525
 GameObject:

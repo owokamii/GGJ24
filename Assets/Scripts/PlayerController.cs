@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject selectionPanel;
     private bool Epress = false;
+    public SelectionQuestion question;
 
     private HoldingItem currentInteractingItem = null;
 
@@ -21,6 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         if (healthBarCanvasGroup != null)
             healthBarCanvasGroup.alpha = 0;
+            healthBar.HealthFull += HealthBarFull;
+    }
+
+    public void Start()
+    {
+        question = FindObjectOfType<SelectionQuestion>();
     }
 
     private void Update()
@@ -146,7 +153,7 @@ public class PlayerController : MonoBehaviour
         {
 
             var item = hit.GetComponent<HoldingItem>();
-            if (item != null && currentInteractingItem != item)
+            if (item != null && currentInteractingItem != item && !item.hasBeenInteractedWith)
             {
                 if (currentInteractingItem != null)
                 {
@@ -162,7 +169,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (((1 << hit.gameObject.layer) & WearingMask) != 0)
         {
-            if (selectionPanel != null)
+            if (selectionPanel != null && question.YesOrNo == false)
             {
                 selectionPanel.SetActive(true);
                 Time.timeScale = 0f;
@@ -177,6 +184,18 @@ public class PlayerController : MonoBehaviour
         {
             item.Interact();
         }
+    }
+
+    private void HealthBarFull()
+    {
+        Epress = false;
+        if (currentInteractingItem != null)
+        {
+            currentInteractingItem.StopInteraction();
+            currentInteractingItem = null;
+        }
+        healthBar.Click = false;
+        healthBarCanvasGroup.alpha = 0;
     }
 
     private void OnDrawGizmosSelected()

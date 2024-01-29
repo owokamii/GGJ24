@@ -8,6 +8,25 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadToNextLevel()
     {
+        CalculateEnding.Poster = false;
+        CalculateEnding.Poster2 = false;
+        CalculateEnding.Manicure = false;
+        CalculateEnding.BishoujoFigures = false;
+        CalculateEnding.wigs = false;
+        CalculateEnding.wigs2 = false;
+        CalculateEnding.BedCleaning = false;
+        CalculateEnding.Shoes = false;
+        CalculateEnding.PlantsDrop = false;
+        CalculateEnding.Water = false;
+        CalculateEnding.dirt = false;
+        CalculateEnding.Laundry = false;
+        CalculateEnding.MaggiCups = false;
+        CalculateEnding.Snacks = false;
+        CalculateEnding.Socks = false;
+        CalculateEnding.MakeUp = false;
+        CalculateEnding.DirtyDish = false;
+        CalculateEnding.Fridge = false;
+        CalculateEnding.StudyTable = false;
         LoadToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

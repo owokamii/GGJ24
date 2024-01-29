@@ -11,13 +11,14 @@ public class HoldingItem : MonoBehaviour
     public Animator animator;
 
     public CanvasGroup healthBarCanvasGroup;
+    public bool hasBeenInteractedWith = false;
     private bool HealbarWasFull;
     private int i;
 
     private void Start()
     {
         GameObject healthBarObj = GameObject.FindGameObjectWithTag("HealthBar");
-
+        hasBeenInteractedWith = false;
         if (healthBarObj != null)
         {
             healthBarCanvasGroup = healthBarObj.GetComponent<CanvasGroup>();
@@ -40,6 +41,7 @@ public class HoldingItem : MonoBehaviour
             
             healthBarCanvasGroup.alpha = 0;
             HealbarWasFull = true;
+            hasBeenInteractedWith = true;
             CalculateEnding.UpdateItemStatus(ItemType, true);
 
         }
@@ -84,6 +86,11 @@ public class HoldingItem : MonoBehaviour
         {
             Invoke("ChangeSpriteAgain", 1);
         }
+    }
+
+    public void ResetInteraction()
+    {
+        hasBeenInteractedWith = false;
     }
 
     private void ChangeSpriteAgain()

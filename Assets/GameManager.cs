@@ -95,4 +95,12 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Ending: {ending.Key}, Unlocked: {ending.Value}");
         }
     }
+
+    public void ResetGame()
+    {
+        foreach (HoldingItem item in FindObjectsOfType<HoldingItem>())
+        {
+            item.ResetInteraction();
+        }
+    }
 }

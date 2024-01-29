@@ -68,6 +68,7 @@ public class SelectionQuestion : MonoBehaviour
         timer.isTimeLimit = false;
         Time.timeScale = 1.0f;
         endingScript.wasEnding = false;
+        GameManager.instance.ResetGame();
         Debug.Log("WasClickMenu");
         SceneManager.LoadScene("TitleScreen");
     }
