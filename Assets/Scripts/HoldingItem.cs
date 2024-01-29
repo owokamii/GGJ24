@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class HoldingItem : MonoBehaviour
 {
+    public Animator playerAnimator;
     public ItemType ItemType;
     public HealthBar healthBar;
     public bool isCurrentlyInteracting = false;
     public Sprite[] sprite;
     
     private SpriteRenderer spriteRenderer;
-    public Animator animator;
+    private Animator animator;
 
     public CanvasGroup healthBarCanvasGroup;
     public bool hasBeenInteractedWith = false;
@@ -25,7 +26,7 @@ public class HoldingItem : MonoBehaviour
         }
         HealbarWasFull = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -70,12 +71,22 @@ public class HoldingItem : MonoBehaviour
         }
         isCurrentlyInteracting = true;
         healthBar.Click = true;
+        if(gameObject.CompareTag("Kitchen"))
+        {
+            playerAnimator.SetBool("CleaningKitchen", true);
+        }
+        else if(gameObject.CompareTag("Floor"))
+        {
+            playerAnimator.SetBool("CleaningFloor", true);
+        }
     }
 
     public void StopInteraction()
     {
         isCurrentlyInteracting = false;
         healthBar.Click = false;
+        playerAnimator.SetBool("CleaningKitchen", false);
+        playerAnimator.SetBool("CleaningFloor", false);
     }
 
     public void ChangeSprite()

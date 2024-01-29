@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poster1
       objectReference: {fileID: 0}
+    - target: {fileID: 6821480689832803326, guid: 2bb18eb2b045d6b4c93284ecf0a8e854, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

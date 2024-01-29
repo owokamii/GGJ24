@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - HealthBar
+  - Wall
+  - Kitchen
+  - Floor
+  - Cleaning
   layers:
   - Default
   - TransparentFX

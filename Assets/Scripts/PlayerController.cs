@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,12 +13,14 @@ public class PlayerController : MonoBehaviour
     public SelectionQuestion question;
 
     private HoldingItem currentInteractingItem = null;
+    private Animator playerAnimator;
 
     public CanvasGroup healthBarCanvasGroup;
     private HashSet<GameObject> highlightedItems = new HashSet<GameObject>();
 
     private void Awake()
     {
+        playerAnimator = GetComponent<Animator>();
         if (healthBarCanvasGroup != null)
             healthBarCanvasGroup.alpha = 0;
             healthBar.HealthFull += HealthBarFull;
@@ -82,14 +83,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
+            gameObject.tag = "Cleaning";
             Epress = false;
             if (currentInteractingItem != null)
             {
+                //gameObject.tag = "Cleaning";
                 currentInteractingItem.StopInteraction();
                 currentInteractingItem = null;
             }
             healthBar.Click = false;
             healthBarCanvasGroup.alpha = 0;
+
         }
         else if (Input.GetKey(KeyCode.E))
         {
@@ -108,6 +112,9 @@ public class PlayerController : MonoBehaviour
             healthBar.Click = false;
             if (healthBarCanvasGroup != null)
                 healthBarCanvasGroup.alpha = 0;
+            /*playerAnimator.SetBool("CleaningWall", false);
+            playerAnimator.SetBool("CleaningKitchen", false);
+            playerAnimator.SetBool("CleaningFloor", false);*/
         }
     }
 
@@ -196,6 +203,9 @@ public class PlayerController : MonoBehaviour
         }
         healthBar.Click = false;
         healthBarCanvasGroup.alpha = 0;
+        /*playerAnimator.SetBool("CleaningWall", false);
+        playerAnimator.SetBool("CleaningKitchen", false);
+        playerAnimator.SetBool("CleaningFloor", false);*/
     }
 
     private void OnDrawGizmosSelected()

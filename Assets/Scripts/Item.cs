@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Animator playerAnimator;
+    public GameObject player;
+
     public ItemType itemType;
 
     public Sprite spriteHighlight; // dirty highlight
@@ -30,8 +33,19 @@ public class Item : MonoBehaviour
         else
         {
             CalculateEnding.UpdateItemStatus(itemType, true);
-            Destroy(gameObject);
+            Destroy(gameObject, 1.01f);
         }
+        if(gameObject.CompareTag("Wall"))
+        {
+            playerAnimator.SetBool("CleaningWall", true);
+            Invoke("StopCleaningWall", 1);
+        }
+        if (gameObject.CompareTag("Kitchen"))
+        {
+            playerAnimator.SetBool("CleaningKitchen", true);
+            Invoke("StopCleaningKitchen", 1);
+        }
+        Invoke("FinishedCleaning", 1);
     }
 
     public void ItemHighlight()
@@ -56,5 +70,20 @@ public class Item : MonoBehaviour
         {
             originalSprite = null;
         }
+    }
+
+    public void StopCleaningWall()
+    {
+        playerAnimator.SetBool("CleaningWall", false);
+    }
+
+    public void StopCleaningKitchen()
+    {
+        playerAnimator.SetBool("CleaningKitchen", false);
+    }
+
+    public void FinishedCleaning()
+    {
+        player.tag = "Player";
     }
 }
