@@ -72,4 +72,9 @@ public class SelectionQuestion : MonoBehaviour
         Debug.Log("WasClickMenu");
         SceneManager.LoadScene("TitleScreen");
     }
+
+    public void resetEnding()
+    {
+        GameManager.instance.ResetData();
+    }
 }
