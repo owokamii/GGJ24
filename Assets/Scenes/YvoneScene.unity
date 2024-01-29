@@ -676,6 +676,66 @@ MonoBehaviour:
   player: {fileID: 570459983}
   healthBarUI: {fileID: 191955147}
   offset: {x: 0, y: 1.5, z: 0}
+--- !u!1 &192141845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192141847}
+  - component: {fileID: 192141846}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &192141846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192141845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8faaccadca42a4e86f2aba7dd21c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixer: {fileID: -9039995884014245546, guid: 47184ed61e7c76a47a79d993fb434e1d, type: 2}
+  sfxMixer: {fileID: -8615648120043438194, guid: 47184ed61e7c76a47a79d993fb434e1d, type: 2}
+  music:
+  - name: BGM
+    loop: 1
+    clip: {fileID: 8300000, guid: 7b0b22c1607106d44851c787e814b874, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  sfx:
+  - name: SFX
+    loop: 0
+    clip: {fileID: 8300000, guid: 0ee8039262133de489297cc58635c783, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &192141847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192141845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 305.35226, y: 52.65326, z: -0.47910196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &255389410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3107,7 +3167,7 @@ Transform:
   m_GameObject: {fileID: 920664950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 740.859, y: 383.42633, z: -7.3137064}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6444,3 +6504,4 @@ SceneRoots:
   - {fileID: 1020902356}
   - {fileID: 286952934}
   - {fileID: 1932265911}
+  - {fileID: 192141847}
