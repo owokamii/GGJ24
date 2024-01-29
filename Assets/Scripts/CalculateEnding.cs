@@ -1,6 +1,4 @@
 using UnityEngine;
-using static UnityEngine.CullingGroup;
-using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.UI;
 using TMPro;
 
@@ -25,6 +23,8 @@ public class CalculateEnding: MonoBehaviour
     public static bool DirtyDish = false;
     public static bool Fridge = false;
     public static bool StudyTable = false;
+
+    public TMP_Text boolChecks;
 
     private CountDownTimer timer;
     public TextMeshProUGUI endingText;
@@ -129,6 +129,7 @@ public class CalculateEnding: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BoolChecks();
         if (timer != null && timer.isTimeLimit)
         {
             if (!wasEnding)
@@ -216,4 +217,11 @@ public class CalculateEnding: MonoBehaviour
             GameManager.instance.PrintEndings();
         }
     }
+
+    public void BoolChecks()
+    {
+        boolChecks.text = "Poster: " + Poster.ToString() + "\nPoster2: " + Poster2.ToString() + "\nManicure: " + Manicure.ToString() + "\nFigures: " + BishoujoFigures.ToString() + "\nWigs: " + wigs.ToString() + "\nWigs2:" + wigs2.ToString() +
+        "\nBedCleaning: " + BedCleaning.ToString() + "\nShoes: " + Shoes.ToString() + "\nPlants: " + PlantsDrop.ToString() + "\nWater: " + Water.ToString() + "\nDirt: " + dirt.ToString() + "\nLaundry: " + Laundry.ToString() + "\nMaggicups: " + MaggiCups.ToString() +
+        "\nSnacks: " + Snacks.ToString() + "\nSocks: " + Socks.ToString() + "\nMakeUp: " + MakeUp.ToString() + "\nDirtyDish: " + DirtyDish.ToString() + "\nFridge: " + Fridge.ToString() + "\nStudyTable: " + StudyTable.ToString();
+}
 }
