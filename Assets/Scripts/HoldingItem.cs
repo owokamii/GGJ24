@@ -9,6 +9,7 @@ public class HoldingItem : MonoBehaviour
     public Sprite[] sprite;
     
     private SpriteRenderer spriteRenderer;
+    private PolygonCollider2D itemCollider;
     private Animator animator;
 
     public CanvasGroup healthBarCanvasGroup;
@@ -27,6 +28,7 @@ public class HoldingItem : MonoBehaviour
         HealbarWasFull = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        itemCollider = GetComponent<PolygonCollider2D>();
     }
 
     private void Update()
@@ -91,6 +93,7 @@ public class HoldingItem : MonoBehaviour
 
     public void ChangeSprite()
     {
+        itemCollider.enabled = false;
         //CalculateEnding.UpdateItemStatus(ItemType, true);
         spriteRenderer.sprite = sprite[i];
         if(sprite.Length > 1)

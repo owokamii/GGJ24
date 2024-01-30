@@ -12,7 +12,8 @@ public class Item : MonoBehaviour
     public Sprite sprite; //clean
     private SpriteRenderer spriteRenderer; // dirty => clean
     private bool isInteracted = false;
-
+    [SerializeField] private PolygonCollider2D itemCollider;
+    
     [Header("Maid Outfit")]
     public SpriteRenderer spritePlayer;
     public Sprite PlayerNewSprite;
@@ -20,6 +21,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        itemCollider = GetComponent<PolygonCollider2D>();
     }
 
     public void Interact()
@@ -33,19 +35,30 @@ public class Item : MonoBehaviour
         else
         {
             CalculateEnding.UpdateItemStatus(itemType, true);
-            Destroy(gameObject, 1.01f);
+            if(gameObject.CompareTag("Wall") || gameObject.CompareTag("Kitchen"))
+            {
+                Destroy(gameObject, 1.01f);
+            }
+            else
+            {
+                Debug.Log("change player tag");
+                player.tag = "Player";
+                Destroy(gameObject);
+            }
         }
         if(gameObject.CompareTag("Wall"))
         {
+
             playerAnimator.SetBool("CleaningWall", true);
             Invoke("StopCleaningWall", 1);
         }
-        if (gameObject.CompareTag("Kitchen"))
+        else if (gameObject.CompareTag("Kitchen"))
         {
             playerAnimator.SetBool("CleaningKitchen", true);
             Invoke("StopCleaningKitchen", 1);
         }
         Invoke("FinishedCleaning", 1);
+        itemCollider.enabled = false;
     }
 
     public void ItemHighlight()

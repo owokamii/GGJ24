@@ -25,12 +25,11 @@ public class CalculateEnding: MonoBehaviour
     public static bool StudyTable = false;
 
     public TMP_Text boolChecks;
-    public Image currentImage;
 
     private CountDownTimer timer;
     public TextMeshProUGUI endingText;
     public bool wasEnding = false;
-    SelectionQuestion SelectionQuestion = new SelectionQuestion();
+    SelectionQuestion selectionQuestion = new SelectionQuestion();
     public GameObject EndingPanel;
     public Image pictureShowingImage;
     public Sprite endingSprite1;
@@ -42,6 +41,8 @@ public class CalculateEnding: MonoBehaviour
 
     void Start()
     {
+
+        selectionQuestion = GetComponent<SelectionQuestion>();
         wasEnding = false;
         GameObject pictureShowingObj = GameObject.Find("EndingPanel/PictureShowing");
         if (pictureShowingObj != null)
@@ -130,6 +131,7 @@ public class CalculateEnding: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("YesOrNo2: " + selectionQuestion.YesOrNo);
         BoolChecks();
 
         if (timer != null && timer.isTimeLimit)
@@ -144,59 +146,12 @@ public class CalculateEnding: MonoBehaviour
 
     public void Ending()
     {
-
-        if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
-        {
-            //ending 1
-            if (pictureShowingImage != null)
-            {
-                pictureShowingImage.sprite = endingSprite1;
-                endingText.text = "I cleaned everything, but Mom never came by.";
-                wasEnding = true;
-            }
-            GameManager.instance.UnlockEnding("Ending1");
-        }
-        else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && StudyTable)
-        {
-            //ending2
-            if (pictureShowingImage != null)
-            {
-                pictureShowingImage.sprite = endingSprite2;
-                endingText.text = "Nothing suspicious here…";
-                wasEnding = true;
-            }
-            GameManager.instance.UnlockEnding("Ending2");
-        }
-        else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge)
-        {
-            //ending5
-            if (pictureShowingImage != null)
-            {
-                pictureShowingImage.sprite = endingSprite5;
-                endingText.text = "We look like sisters!";
-                wasEnding = true;
-            }
-            GameManager.instance.UnlockEnding("Ending5");
-        }
-        else if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
-        {
-            //ending6
-            if (pictureShowingImage != null)
-            {
-                pictureShowingImage.sprite = endingSprite6;
-                endingText.text = "Pretty sure today is mother’s day…";
-                wasEnding = true;
-            }
-            GameManager.instance.UnlockEnding("Ending6");
-        }
-        else if(SelectionQuestion.YesOrNo == true)
+        if (selectionQuestion.YesOrNo == true) // confirmed maid ending
         {
             if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
             && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
             {
-                //ending 4
+                //ending 4 - Cleaned Everything - while wearing maid outfit == correct
                 if (pictureShowingImage != null)
                 {
                     pictureShowingImage.sprite = endingSprite4;
@@ -205,19 +160,81 @@ public class CalculateEnding: MonoBehaviour
                 }
                 GameManager.instance.UnlockEnding("Ending4");
             }
+            else
+            {
+                //ending 3 - did not clean anything or is wrong == correct
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite3;
+                    endingText.text = "I was kicked out of the house afterward.";
+                    Debug.Log("Bad Ending");
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending3");
+                GameManager.instance.PrintEndings();
+            }
         }
         else
         {
-            //ending3
-            if (pictureShowingImage != null)
+            if (Poster && Poster2 && BishoujoFigures && wigs && wigs2 && BedCleaning && PlantsDrop && Water
+                && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable && !(Manicure&&MakeUp &&Shoes))
             {
-                pictureShowingImage.sprite = endingSprite3;
-                endingText.text = "I was kicked out of the house afterward.";
-                Debug.Log("Bad Ending");
-                wasEnding = true;
+                //ending 6 - cleaned everything except gifts
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite6;
+                    endingText.text = "Pretty sure today is mother’s day…";
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending6");
             }
-            GameManager.instance.UnlockEnding("Ending3");
-            GameManager.instance.PrintEndings();
+            else if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && StudyTable && !(PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge))
+            {
+                //ending 2 - cleaned everything except girly
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite2;
+                    endingText.text = "Nothing suspicious here…";
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending2");
+            }
+            else if (PlantsDrop && Water && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && !(Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && StudyTable))
+            {
+                //ending 5 - cleaned everything except dirty
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite5;
+                    endingText.text = "We look like sisters!";
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending5");
+            }
+            else if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
+            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
+            {
+                //ending 1 - cleaned everything
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite1;
+                    endingText.text = "I cleaned everything, but Mom never came by.";
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending1");
+            }
+            else
+            {
+                //ending 3 - did not clean anything or is wrong
+                if (pictureShowingImage != null)
+                {
+                    pictureShowingImage.sprite = endingSprite3;
+                    endingText.text = "I was kicked out of the house afterward.";
+                    Debug.Log("Bad Ending");
+                    wasEnding = true;
+                }
+                GameManager.instance.UnlockEnding("Ending3");
+                GameManager.instance.PrintEndings();
+            }
         }
     }
 
@@ -226,6 +243,5 @@ public class CalculateEnding: MonoBehaviour
         boolChecks.text = "Poster: " + Poster.ToString() + "\nPoster2: " + Poster2.ToString() + "\nManicure: " + Manicure.ToString() + "\nFigures: " + BishoujoFigures.ToString() + "\nWigs: " + wigs.ToString() + "\nWigs2:" + wigs2.ToString() +
         "\nBedCleaning: " + BedCleaning.ToString() + "\nShoes: " + Shoes.ToString() + "\nPlants: " + PlantsDrop.ToString() + "\nWater: " + Water.ToString() + "\nDirt: " + dirt.ToString() + "\nLaundry: " + Laundry.ToString() + "\nMaggicups: " + MaggiCups.ToString() +
         "\nSnacks: " + Snacks.ToString() + "\nSocks: " + Socks.ToString() + "\nMakeUp: " + MakeUp.ToString() + "\nDirtyDish: " + DirtyDish.ToString() + "\nFridge: " + Fridge.ToString() + "\nStudyTable: " + StudyTable.ToString();
-        Debug.Log(currentImage); 
     }
 }

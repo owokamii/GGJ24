@@ -48,6 +48,7 @@ public class SelectionQuestion : MonoBehaviour
     public void Yes()
     {
         YesOrNo = true;
+        Debug.Log("YesOrNo: " + YesOrNo);
         panel.SetActive(false);
         Time.timeScale = 1.0f;
         Debug.Log("was call");

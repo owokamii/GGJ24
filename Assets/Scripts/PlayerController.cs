@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public SelectionQuestion question;
 
     private HoldingItem currentInteractingItem = null;
+    private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;
 
     public CanvasGroup healthBarCanvasGroup;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
         if (healthBarCanvasGroup != null)
             healthBarCanvasGroup.alpha = 0;
@@ -213,5 +215,19 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
-}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("detected something");
+        if(collision.CompareTag("Front"))
+        {
+            Debug.Log("table");
+            spriteRenderer.sortingLayerName = "Background";
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        spriteRenderer.sortingLayerName = "Player";
+    }
+}
