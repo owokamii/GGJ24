@@ -148,31 +148,14 @@ public class CalculateEnding: MonoBehaviour
     {
         if (selectionQuestion.YesOrNo == true) // confirmed maid ending
         {
-            if (Poster && Poster2 && Manicure && BishoujoFigures && wigs && wigs2 && BedCleaning && Shoes && MakeUp && PlantsDrop && Water
-            && dirt && Laundry && MaggiCups && Snacks && Socks && DirtyDish && Fridge && StudyTable)
+            //ending 4 - Cleaned Everything - while wearing maid outfit == correct
+            if (pictureShowingImage != null)
             {
-                //ending 4 - Cleaned Everything - while wearing maid outfit == correct
-                if (pictureShowingImage != null)
-                {
-                    pictureShowingImage.sprite = endingSprite4;
-                    endingText.text = "I swear, it’s a gift from a friend!";
-                    wasEnding = true;
-                }
-                GameManager.instance.UnlockEnding("Ending4");
+                pictureShowingImage.sprite = endingSprite4;
+                endingText.text = "I swear, it’s a gift from a friend!";
+                wasEnding = true;
             }
-            else
-            {
-                //ending 3 - did not clean anything or is wrong == correct
-                if (pictureShowingImage != null)
-                {
-                    pictureShowingImage.sprite = endingSprite3;
-                    endingText.text = "I was kicked out of the house afterward.";
-                    Debug.Log("Bad Ending");
-                    wasEnding = true;
-                }
-                GameManager.instance.UnlockEnding("Ending3");
-                GameManager.instance.PrintEndings();
-            }
+            GameManager.instance.UnlockEnding("Ending4");
         }
         else
         {
@@ -228,7 +211,7 @@ public class CalculateEnding: MonoBehaviour
                 if (pictureShowingImage != null)
                 {
                     pictureShowingImage.sprite = endingSprite3;
-                    endingText.text = "I was kicked out of the house afterward.";
+                    endingText.text = "I was kicked out of the house afterwards.";
                     Debug.Log("Bad Ending");
                     wasEnding = true;
                 }
